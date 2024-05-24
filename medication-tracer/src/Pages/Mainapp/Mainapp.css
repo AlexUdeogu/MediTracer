@@ -1,0 +1,266 @@
+:root {
+  --background: #d0ebf8;
+  --text: #1C3A3E;
+  --input-background: #FFFFFF;
+  --button-background: #01796F;
+  --button-text: #FFFFFF;
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Alegreya', serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+}
+
+.login-page {
+  background: var(--background);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Align to the left */
+  align-items: center;
+  font-family: var(--body-font);
+  font-size: 15px;
+}
+
+.login-container {
+  background: var(--input-background);
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 100%;
+}
+
+.login-title {
+  font-family: var(--heading-font);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 60px;
+}
+
+.login-form {
+  width: 50%;
+  padding-top: 1%;
+}
+
+.login-form-group {
+  margin-bottom: 0.8rem;
+  margin-left: 2%;
+}
+
+.login-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+
+.login-form-input {
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 0.5px solid #949494;
+  background: var(--input-background);
+  color: var(--text);
+}
+
+.login-form-input-d {
+  width: 100%;
+  height: 90px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 0.5px solid #949494;
+  background: var(--input-background);
+  color: var(--text);
+}
+
+
+.login-form-input-date {
+  width: 309px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 0.5px solid #949494;
+  background: var(--input-background);
+  color: var(--text);
+}
+
+
+.login-form-button {
+  margin-left: 2%;
+  width: 30%;
+  margin-top: 10px;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  background : #0F2B2D;
+  color: var(--button-text);
+  font-size: 17px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-button:hover {
+  background: #000000;
+}
+
+::placeholder {
+  color: rgb(153, 153, 153); 
+}
+
+#email::placeholder {
+  color: rgb(153, 153, 153);
+}
+
+#password::placeholder {
+  color: rgb(153, 153, 153); 
+}
+
+.forgotpassword {
+  text-align: center;
+  margin-top: 1rem; 
+}
+
+.forgotpassword a {
+  color: #1C3A3E;
+  text-decoration: none;
+}
+
+.forgotpassword a:hover {
+  text-decoration: underline;
+}
+
+.item-container {
+  height: 20px;
+  padding: 10px 10px;
+  width: 20%;
+  margin-top: 9px;
+  border-radius: 50%;
+  border: none;
+  background: #0F2B2D;
+  color: white;
+  font-size: 17px;
+  transition: background-color 0.3s ease;
+}
+
+.item-container:hover {
+  background: #000000;
+}
+
+nav{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.15); 
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  
+}
+
+
+nav ul{
+  padding-right: 5%;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 15px;
+  font-size: 15px;
+
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #1C3A3E;
+}
+
+.logo{
+  padding: 10px;
+  margin-left: 40px;
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #1C3A3E;
+
+}
+
+
+
+
+
+.name-fields, .user-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-fields .login-form-group,
+.user-fields .login-form-group {
+  flex: 1;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.name-fields .login-form-group:last-child,
+.user-fields .login-form-group:last-child {
+  margin-right: 0;
+}
+
+.login-form-input {
+  width: 100%; /* Adjust width to fit within the flexbox layout */
+}
+
+
+
+
+
+
+/* Custom styles for react-datepicker */
+.react-datepicker {
+  font-family: var(--body-font);
+}
+
+.react-datepicker__header {
+  background-color: white;
+  border-bottom: 0px solid #0F2B2D;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: var(--text);
+  font-weight: bold;
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name,
+.react-datepicker__time-name {
+  color: #1C3A3E;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #cacaca;
+  color: var(--button-text);
+}
+
+.react-datepicker__day--today {
+  font-weight: bold;
+  color: #1C3A3E;
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  border-color: #1C3A3E;
+}
+
+.react-datepicker__navigation--previous:hover,
+.react-datepicker__navigation--next:hover {
+  border-color: #1C3A3E;
+}

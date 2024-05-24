@@ -1,0 +1,122 @@
+:root {
+    --background: #d0ebf8;
+    --text: #1C3A3E;
+    --input-background: #FFFFFF;
+    --button-background: #01796F;
+    --button-text: #FFFFFF;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Alegreya', serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+  }
+  
+  .login-page {
+    background: var(--background);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    font-family: var(--body-font);
+  }
+  
+  .login-container {
+    background: var(--input-background);
+    padding: 1rem;
+    width: 50%; 
+    height: 100%;
+  }
+  
+  .login-title {
+    font-family: var(--heading-font);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 60px;
+  }
+  
+  .login-form {
+    width: 100%;
+    padding-top: 60px;
+    
+  }
+  
+  .login-form-group {
+    margin-bottom: 1rem;
+    margin-left: 6%;
+  }
+  
+  .login-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .login-form-input {
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 0.5px solid #949494;
+    background: var(--input-background);
+    color: var(--text);
+  }
+  
+  .login-form-button {
+    margin-left: 6%;
+    width: 84.5%;
+    margin-top: 20px;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text);
+    font-size: 17px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form-button:hover {
+    background: #1C3A3E;
+  }
+  
+  
+  
+  ::placeholder {
+    color: rgb(153, 153, 153); 
+  }
+  
+  #email::placeholder {
+    color: rgb(153, 153, 153);
+  }
+  
+  #password::placeholder {
+    color: rgb(153, 153, 153); 
+  }
+  
+  .forgotpassword {
+    text-align: center;
+    margin-top: 1rem; 
+  }
+  
+  .forgotpassword a {
+    color: #1C3A3E;
+    text-decoration: none;
+  }
+  
+  .forgotpassword a:hover {
+    text-decoration: underline;
+  }
+  
+  .cutout-container{
+      width: 45%;   
+      overflow: hidden;
+  }
+  
+  .cutout-img{
+    width: 82%;
+    margin-top: 55px;
+    margin-left: 25%;
+  }
+  

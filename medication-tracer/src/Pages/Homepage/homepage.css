@@ -1,0 +1,327 @@
+:root {
+    --background: #E3F2F9;
+    --text: #1C3A3E;
+    --button-background: #01796F;
+    --button-text: #FFFFFF;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', serif;
+    --highlight-color: #0F2B2D; /* Darker color for highlighting */
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the navigation bar appears above other content */
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+  }
+  
+  nav ul {
+    padding-right: 3%;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+    font-size: 17px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #1C3A3E;
+  }
+  
+  .logo {
+    padding: 10px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #1C3A3E;
+  }
+  
+  .items {
+    padding: 19px;
+    white-space: nowrap;
+    color: #01796F;
+    font-weight: 500;
+  }
+  
+  .item-container-1 {
+    height: 40px;
+    padding: 8px 40px;
+    width: 70%;
+    margin-top: 9px;
+    border-radius: 6px;
+    border: none;
+    background:  #1C3A3E;
+    color: var(--button-text);
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .item-container-1:hover {
+    background: #152a2e;
+  }
+  
+  .intro {
+    padding-left: 100px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    display: flex;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .intro-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 400%;
+    margin-right: 20px;
+    padding-left: 13.5%;
+    color: #555555;
+    text-align: right;
+    line-height: 75px;
+    white-space: nowrap;    
+  }
+  
+  .intro-image1 {
+    aspect-ratio: 16 / 9;
+    width: 750px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 0;
+  }
+  
+  
+  .highlight {
+    color: var(--highlight-color);
+    font-family: 'Playfair Display', serif;
+
+  }
+
+  .intro-description {
+    font-family: 'Playfair Display', serif;
+    color: var(--highlight-color);
+    font-size: 45px;
+    white-space: nowrap;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;   
+    display: block;      
+    margin: 0 auto;    
+    color: #555555;
+    transition: 0.7s;
+}
+
+.intro-description:hover{
+  color: #0F2B2D;
+  text-decoration: none;
+}
+
+
+.Vision {
+    background-color: #eeeeee;
+    justify-content: center;
+    width: 100%;
+    margin-top: 85px;
+    padding-top: 60px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 100px;
+}
+
+.mission-card {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 90px;
+    text-align: center;
+    border: #0F2B2D;
+    background-color: #FFFFFF;
+    outline: 2px solid;
+    border-radius: 10px;
+    color: #0F2B2D;
+    letter-spacing: -0px;
+    font-size: 15px;
+
+}
+
+
+.card-text{
+    font-size: 110%;
+    font-weight: 300;
+}
+
+.card-head {
+  font-size: 45px;
+  font-family: 'Playfair Display', serif;
+}
+
+.mission-card-wide {
+    width: 203%; /* Adjust width as needed */
+    padding: 40px;
+    font-size: 15px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: #0F2B2D;
+    outline: 2px solid;    
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #0F2B2D;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.works{
+    display: grid;
+    place-items: center; /* Center both horizontally and vertically */
+    height: 80vh;
+}
+
+.work-1{
+    background-color: #E3F2F9;
+    width: 55%;
+    height: auto;
+    margin: 10px;
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 15px;
+    color: #0F2B2D;
+    letter-spacing: 0px;
+    text-align:left;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+
+.text-content {
+    max-width: 60%;
+  }
+
+.work-image{
+    width: 30%;
+    position: relative;
+    height: 30%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 20px;
+}
+
+.text-content-header{
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -1px;
+    font-size: 45px;
+    padding-bottom: 10px;
+    line-height: 50px;
+}
+
+.work-header{
+    align-items: center;
+    justify-content: center;
+}
+
+
+.work-intro-text{
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.work-header-text{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 15px;
+    font-size: 45px;
+    line-height: 50px;
+    color: #0F2B2D;
+}
+
+
+
+
+
+.faq-header{
+  align-items: center;
+  justify-content: center;
+}
+
+
+.faq-intro-text{
+  padding-top: 8%;
+}
+
+.faq-header-text{
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  line-height: 50px;
+  color: #0F2B2D;
+}
+
+.download{
+  margin-top: 50px;
+  background-color: #E3F2F9;
+  display: grid;
+  place-items: center; /* Center both horizontally and vertically */
+  height: 40vh;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.download-header-text{
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  color: #0F2B2D;
+
+}
+
+.download-para-text{
+  color: #0F2B2D;
+  padding-bottom: 15px;
+
+}
+
+
+
+.footer-text{
+  color: #0F2B2D;
+  font-size: 15px;
+}
+
+.alex {
+  color: #555555;
+  transition: 0.7s;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.alex:hover {
+  color: #0F2B2D;
+  text-decoration: none;
+}
+
+
