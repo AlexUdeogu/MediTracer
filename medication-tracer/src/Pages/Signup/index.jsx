@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import './signup.css';
 import cutout from "../../assets/standing-16.svg"
 const Signup = () => {
@@ -9,7 +10,7 @@ const Signup = () => {
             <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
             <ul>
                 <li><a href="#service">Already have an account?</a></li>
-                <li><a href="#"> <botton type="submit" className="item-container" > Log In </botton></a></li>
+                <li><Link to="/log-in"> <button type="submit" className="item-container" > Log In </button></Link></li>
             </ul>
         </nav>
 

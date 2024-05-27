@@ -8,12 +8,14 @@
   --body-font: 'Alegreya', serif;
 }
 
-body {
+.body {
   margin: 0;
   font-family: var(--body-font);
+  height: 100vh;
+  overflow: hidden;
 }
 
-.login-page {
+.login-page-1 {
   background: var(--background);
   color: var(--text);
   height: 100vh;
@@ -23,38 +25,38 @@ body {
   font-family: var(--body-font);
 }
 
-.login-container {
+.login-container-1 {
   background: var(--input-background);
   padding: 1rem;
   width: 50%; 
   height: 100%;
 }
 
-.login-title {
+.login-title-1 {
   font-family: var(--heading-font);
   text-align: center;
   margin-bottom: 1rem;
   font-size: 60px;
 }
 
-.login-form {
+.login-form-1 {
   width: 100%;
-  padding-top: 150px;
+  padding-top: 20%;
   
 }
 
-.login-form-group {
+.login-form-group-1 {
   margin-bottom: 1rem;
   margin-left: 6%;
 }
 
-.login-form-label {
+.login-form-label-1 {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-.login-form-input {
+.login-form-input-1 {
   width: 90%;
   padding: 0.5rem;
   border-radius: 6px;
@@ -63,22 +65,22 @@ body {
   color: var(--text);
 }
 
-.login-form-button {
+.login-form-button-1 {
   margin-left: 6%;
   width: 84.5%;
   margin-top: 20px;
   padding: 0.75rem;
   border-radius: 6px;
   border: none;
-  background: var(--button-background);
+  background: #1C3A3E;
   color: var(--button-text);
   font-size: 17px;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
-.login-form-button:hover {
-  background: #1C3A3E;
+.login-form-button-1:hover {
+  background: #0a1516;
 }
 
 
@@ -95,27 +97,97 @@ body {
   color: rgb(153, 153, 153); 
 }
 
-.forgotpassword {
+.forgotpassword-1 {
   text-align: center;
   margin-top: 1rem; 
 }
 
-.forgotpassword a {
+.forgotpassword-1 a {
   color: #1C3A3E;
   text-decoration: none;
 }
 
-.forgotpassword a:hover {
+.forgotpassword-1 a:hover {
   text-decoration: underline;
 }
 
-.cutout-container{
-    width: 60%;   
+.cutout-container-1{
+    width: 55%;   
     overflow: hidden;
 }
 
-.cutout-img{
+.cutout-img-1{
   width: 82%;
   margin-top: 55px;
   margin-left: 25%;
 }
+
+nav{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.15); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    
+}
+
+
+nav ul{
+    padding-right: 5%;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+    font-size: 17px;
+
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo-1{
+    padding: 10px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #1C3A3E;
+
+}
+
+
+
+
+.items{
+    padding: 19px;
+    white-space: nowrap;
+    color: #01796F;
+    font-weight: 500;
+        
+}
+
+.item-container-1{
+    height: 40px;
+    padding: 8px 40px;
+    width: 70%;
+    margin-top: 9px;
+    border-radius: 6px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text);
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+}
+ .item-container-1:hover {
+    background: #1C3A3E;
+  }
+

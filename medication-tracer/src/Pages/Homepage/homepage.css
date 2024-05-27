@@ -325,3 +325,19 @@
 }
 
 
+@keyframes lightUp {
+  from {
+    color: #ccc; 
+  }
+  to {
+    color: #1C3A3E; 
+  }
+}
+
+.light-up {
+  animation: lightUp 1s forwards; 
+}
+
+.intro-description {
+  transition: color 1s ease;
+}

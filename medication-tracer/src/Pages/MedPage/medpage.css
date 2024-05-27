@@ -1,0 +1,105 @@
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the navigation bar is above other content */
+    background-color: rgba(128, 128, 128, 0.15); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    width: 100%;
+}
+
+nav ul {
+    padding-right: 5%;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+    font-size: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1C3A3E;
+}
+
+.logo {
+    padding: 10px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #1C3A3E;
+}
+
+
+/* Centering .mainpage content */
+.mainpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1C3A3E;
+
+    justify-content: center;
+    height: 98vh;
+    text-align: center;
+}
+.mainpage-head{
+    color: #1C3A3E;
+    font-family: 'Playfair Display', serif;
+}
+
+.mainpage-title {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+/* Table styles */
+/* Updated CSS for table */
+.med-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+}
+
+.med-table th, .med-table td {
+    border-top: 1px solid #ddd; /* Only horizontal lines */
+    border-bottom: 1px solid #ddd; /* Only horizontal lines */
+    padding: 12px 20px; /* Increased padding for more space */
+}
+
+.med-table th {
+    text-align: center;
+}
+
+.item-container-button{
+    margin: 20px;
+}
+
+.item-container-main {
+    height: 40px;
+    padding: 8px 40px;
+    width: 70%;
+    border-radius: 6px;
+    border: none;
+    background:  #1C3A3E;
+    color: var(--button-text);
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .item-container-1:hover {
+    background: #152a2e;
+  }
+

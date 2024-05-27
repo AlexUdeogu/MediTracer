@@ -1,33 +1,42 @@
 import React from 'react';
-import './index.css';
+import './auth-index.css'
 import cutout from "../../assets/sitting-5.svg"
-import Bars from "../../Components/Navbar/index"
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
-    <div>
-      <Bars />
-      <div className="login-page">
-        <div className="login-container">
-          <form className="login-form">
-            <h2 className="login-title">Log In</h2>
+
+    <div className='body'>
+
+        <nav>
+            <a href='#' className='logo-1'> Medi<span className='logo-half'>Tracer</span></a>
+            <ul>
+                <li><a href="#service">Already have an account?</a></li>
+                <li><Link to="/log-in"> <botton type="submit" className="item-container-1" > Log In </botton></Link></li>
+            </ul>
+        </nav>
+
+      <div className="login-page-1">
+        <div className="login-container-1">
+          <form className="login-form-1">
+            <h2 className="login-title-1">Log In</h2>
 
 
 
-            <div className="login-form-group">
-              <label htmlFor="email" className="login-form-label">Username or Email:</label>
-              <input type="email" id="email" className="login-form-input" placeholder="Enter your username or email" />
+            <div className="login-form-group-1">
+              <label htmlFor="email" className="login-form-label-1">Username or Email:</label>
+              <input type="email" id="email" className="login-form-input-1" placeholder="Enter your username or email" />
             </div>
 
 
 
-            <div className="login-form-group">
-              <label htmlFor="password" className="login-form-label">Password:</label>
-              <input type='password' id="password" className="login-form-input" placeholder="Enter your password" />
+            <div className="login-form-group-1">
+              <label htmlFor="password" className="login-form-label-1">Password:</label>
+              <input type='password' id="password" className="login-form-input-1" placeholder="Enter your password" />
             </div>
 
 
-            <button type="submit" className="login-form-button">Log In</button>
+            <button type="submit" className="login-form-button-1">Log In</button>
             <div className="forgotpassword">
               <a href='#'>Forgot Password?</a>
             </div>
@@ -35,8 +44,8 @@ const LoginPage = () => {
             
           </form>
         </div>
-        <div className="cutout-container">
-        <img src={cutout} alt="Tools" className="cutout-img" />
+        <div className="cutout-container-1">
+        <img src={cutout} alt="Tools" className="cutout-img-1" />
         </div>
       </div>
     </div>

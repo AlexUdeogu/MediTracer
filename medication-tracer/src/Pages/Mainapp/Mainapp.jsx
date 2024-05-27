@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';  // Correct import for CSS
+import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from "react-router-dom";
 import './Mainapp.css';
 
 export const Mainapp = () => {
@@ -28,7 +29,18 @@ export const Mainapp = () => {
               </div>
               <div className="login-form-group">
                 <label htmlFor="dosage" className="login-form-label">Dosage:</label>
-                <input className="login-form-input" id="dosage" placeholder="Once a day" />
+                <select className="login-form-input" id="dosage">
+                  <option value="1">1 tablet</option>
+                  <option value="2">2 tablets</option>
+                  <option value="3">3 tablets</option>
+                  <option value="4">4 tablets</option>
+                  <option value="5">5 tablets</option>
+                  <option value="6">6 tablets</option>
+                  <option value="7">7 tablets</option>
+                  <option value="8">8 tablets</option>
+                  <option value="9">9 tablets</option>
+                  <option value="10">10 tablets</option>
+                </select>
               </div>
             </div>
 
