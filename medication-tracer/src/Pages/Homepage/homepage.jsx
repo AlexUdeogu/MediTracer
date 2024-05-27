@@ -34,7 +34,7 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div>
+    <div className='body-x'>
       <nav className='navbar'>
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
@@ -119,7 +119,7 @@ const Homepage = () => {
           <p className="download-para-text">
             Revolutionize your task management. Achieve your goal, one task <br/> at a time. Grab your download and get started.
           </p>
-          <a href="#"> <button type="submit" className="item-container-1">Sign Up</button></a>
+          <Link to="/sign-up"><button type="submit" className="item-container-1">Sign Up</button></Link>
         </div>
       </div>
 

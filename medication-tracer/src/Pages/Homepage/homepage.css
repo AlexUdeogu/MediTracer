@@ -7,6 +7,10 @@
     --body-font: 'Montserrat', serif;
     --highlight-color: #0F2B2D; /* Darker color for highlighting */
   }
+
+  .body-x{
+    overflow: auto;
+  }
   
   .navbar {
     position: sticky;

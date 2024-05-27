@@ -181,13 +181,13 @@ nav ul li a {
     margin-top: 9px;
     border-radius: 6px;
     border: none;
-    background: var(--button-background);
+    background: #1C3A3E;
     color: var(--button-text);
     font-weight: 600;
     font-size: 17px;
     transition: background-color 0.3s ease;
 }
  .item-container-1:hover {
-    background: #1C3A3E;
+    background: #0a1516;
   }
 

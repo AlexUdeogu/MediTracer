@@ -9,10 +9,10 @@ const LoginPage = () => {
     <div className='body'>
 
         <nav>
-            <a href='#' className='logo-1'> Medi<span className='logo-half'>Tracer</span></a>
+            <Link to="/" className='logo-1'> Medi<span className='logo-half'>Tracer</span></Link>
             <ul>
-                <li><a href="#service">Already have an account?</a></li>
-                <li><Link to="/log-in"> <botton type="submit" className="item-container-1" > Log In </botton></Link></li>
+                <li>Don't have an account?</li>
+                <li><Link to="/sign-up"> <botton type="submit" className="item-container-1" > Sign Up </botton></Link></li>
             </ul>
         </nav>
 
