@@ -7,7 +7,7 @@ const Signup = () => {
   return (
     <div>
       <div > 
-      <nav>
+      <nav className='nav-3'>
         <Link to="/" className='logo-0'> Medi<span className='logo-half'>Tracer</span></Link>
         <ul>
           <li>Already have an account?</li>

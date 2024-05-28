@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import './homepage.css';
-import temp from '../../assets/Temp1.png'
-import introimage from '../../assets/intro-img.png'
+import temp from '../../assets/Temp1.png';
+import introimage from '../../assets/intro-img.png';
 import { Link } from "react-router-dom";
-import FAQ from '../../Components/Accordion/acc.jsx'
+import FAQ from '../../Components/Accordion/acc.jsx';
 
 const Homepage = () => {
   const introDescriptionRef = useRef(null);
-
+  const objectivesRef = useRef(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,15 +34,43 @@ const Homepage = () => {
     };
   }, []);
 
+  const handleScrollToObjectives = (e) => {
+    e.preventDefault();
+    if (objectivesRef.current) {
+      objectivesRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToWorks = (e) => { 
+    e.preventDefault();
+    const worksSection = document.getElementById('works');
+    if (worksSection) {
+      const yOffset = worksSection.getBoundingClientRect().top;
+      const duration = Math.abs(yOffset) / 2; 
+      worksSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration });
+    }
+  };
+
+  const handleScrollToFAQs = (e) => { // Function to handle smooth scrolling to "FAQs" section
+    e.preventDefault();
+    const faqsSection = document.getElementById('faqs');
+    if (faqsSection) {
+      const yOffset = faqsSection.getBoundingClientRect().top;
+      const duration = Math.abs(yOffset) / 2; 
+      faqsSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration });
+    }
+  };
+
   return (
     <div className='body-x'>
-      <nav className='navbar'>
+      <nav className='navbar-x'>
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
-          <li><a href="#service">How it works</a></li>
-          <li><a href="#service">About</a></li>
-          <li><a href="#service">Don't have an account?</a></li>
-          <li><Link to="/log-in"><botton type="submit" className="item-container-1"> Log In </botton></Link></li>
+          <li><a href="#objectives" onClick={handleScrollToObjectives}>About</a></li>
+          <li><a href="#works" onClick={handleScrollToWorks}>How it works</a></li> 
+          <li><a href="#faqs" onClick={handleScrollToFAQs}>FAQs</a></li> {/* Updated link */}
+          <li><Link to="/log-in"><a href="#account">Don't have an account?</a></Link></li>
+          <li><Link to="/log-in"><botton type="submit" className="item-container-1">Log In</botton></Link></li>
         </ul>
       </nav>
 
@@ -50,7 +79,7 @@ const Homepage = () => {
         <img src={introimage} alt="Medication" className='intro-image1'/>
       </div>
 
-      <div className='Vision'>
+      <div className='Vision' id="objectives" ref={objectivesRef}>
         <h1 className='intro-description' ref={introDescriptionRef}>MediTracer's Objectives</h1>
         <div className="cards">
           <div className="mission-card">
@@ -74,13 +103,13 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="works">
+      <div className="works" id="works"> 
         <div className="work-intro-text">
           <div className="work-header">
             <h1 className='work-header-text'>
               Unlock your full potential <br/> with our cutting-edge features
             </h1>
-            <p>
+            <p className='work-header-para'>
               From intuitive task management to advanced data analytics, our software equips <br/> you with the tools you need to thrive in today's competitive business landscape.
             </p>
           </div>
@@ -98,7 +127,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="faq">
+      <div className="faq" id="faqs"> {/* Added id attribute */}
         <div className="faq-side1">
           <div className="faq-intro-text">
             <div className="faq-header">
@@ -114,7 +143,7 @@ const Homepage = () => {
       <div className="download">
         <div>
           <h1 className="download-header-text">
-            What are waiting for?
+            What are you waiting for?
           </h1>
           <p className="download-para-text">
             Revolutionize your task management. Achieve your goal, one task <br/> at a time. Grab your download and get started.

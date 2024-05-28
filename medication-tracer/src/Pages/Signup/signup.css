@@ -36,7 +36,7 @@
 
 .login-form-0 {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .login-form-group-0 {
@@ -139,4 +139,34 @@
   font-weight: 600;
   color: #1C3A3E;
 
+}
+.nav-3{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  background-color: rgb(255, 255, 255); 
+  color: #1C3A3E;
+
+  
+}
+
+
+.nav-3 ul{
+  padding-right: 5%;
+}
+
+.nav-3 ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 15px;
+  font-size: 15px;
+
+}
+
+
+.nav-3 ul li a {
+  text-decoration: none;
+  color: #ffffff;
 }

@@ -8,7 +8,7 @@ const LoginPage = () => {
 
     <div className='body'>
 
-        <nav>
+        <nav className='nav-2'>
             <Link to="/" className='logo-1'> Medi<span className='logo-half'>Tracer</span></Link>
             <ul>
                 <li>Don't have an account?</li>
