@@ -1,12 +1,11 @@
 nav {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure the navigation bar is above other content */
-    background-color: rgba(128, 128, 128, 0.15); 
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(128, 128, 128, 0.15);
+    z-index: 1000;
+    background-color: rgb(255, 255, 255); 
     width: 100%;
 }
+
 
 nav ul {
     padding-right: 5%;
@@ -38,6 +37,7 @@ nav ul li a {
 /* Centering .mainpage content */
 .mainpage {
     display: flex;
+    padding-top: 15vw;
     flex-direction: column;
     align-items: center;
     color: #1C3A3E;
@@ -83,8 +83,14 @@ p {
     text-align: center;
 }
 
+.nowrap {
+    white-space: nowrap;
+  }
+  
+
 .item-container-button{
     margin: 20px;
+    
 }
 
 .item-container-main {
@@ -99,7 +105,32 @@ p {
     transition: background-color 0.3s ease;
   }
   
-  .item-container-1:hover {
+  .item-container-main:hover {
     background: #152a2e;
   }
+
+/* Styles for the delete button */
+/* Styles for the delete button */
+.med-table button {
+    height: 30px; /* Reduced button height */
+    padding: 4px 20px; /* Reduced padding */
+    border-radius: 6px;
+    border: none;
+    background: #E53E3E;
+    color: white;
+    font-size: 14px; /* Reduced font size */
+    display: inline-flex; /* Allows vertical centering */
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.med-table button:hover {
+    background: #C53030;
+}
+
+.footer-space{
+    padding: 10%;
+}
 

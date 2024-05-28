@@ -11,7 +11,7 @@ const Medpage = () => {
   };
 
   return (
-    <div>
+    <div className='body-page'>
         <nav>
             <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
             <ul>
@@ -24,7 +24,7 @@ const Medpage = () => {
           <h1 className='mainpage-head'>Medications</h1>
           <p>Manage your reminders and view their health performance.</p>
         </div>
-        {(rows.length > 0) && (
+            {rows.length > 0 && (
           <table className="med-table">
             <thead>
               <tr>
@@ -39,23 +39,25 @@ const Medpage = () => {
             <tbody>
               {rows.map((_, index) => (
                 <tr key={index}>
-                  <td>Row {index + 1}, Col 1</td>
-                  <td>Row {index + 1}, Col 2</td>
-                  <td>Row {index + 1}, Col 3</td>
-                  <td>Row {index + 1}, Col 4</td>
-                  <td>Row {index + 1}, Col 5</td>
+                  <td className="nowrap">Row {index + 1}, Col 1</td>
+                  <td className="nowrap">Row {index + 1}, Col 2</td>
+                  <td className="nowrap">Row {index + 1}, Col 3</td>
+                  <td className="nowrap">Row {index + 1}, Col 4</td>
+                  <td className="nowrap">Row {index + 1}, Col 5</td>
                   <td>
-                    <button onClick={() => deleteRow(index)}>Delete</button>
+                    <button onClick={() => deleteRow(index)} className="item-container-main">Delete</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          
         )}
         <div className="item-container-button">
         <Link Link to="/main-app"><botton type="submit" className="item-container-main" >Add new reminder</botton></Link>
         </div>
+      </div>
+      <div className="footer-space">
+        
       </div>
     </div>
   );

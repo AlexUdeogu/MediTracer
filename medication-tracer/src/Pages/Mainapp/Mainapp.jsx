@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import TimePicker from 'react-time-picker'; // Importing the TimePicker component
 import 'react-datepicker/dist/react-datepicker.css';
+import 'react-time-picker/dist/TimePicker.css'; // Importing TimePicker styles
 import { Link } from "react-router-dom";
 import './Mainapp.css';
 
 export const Mainapp = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [secondPrescriptionTime, setSecondPrescriptionTime] = useState('12:00'); // New state for the second prescription time
 
   return (
     <div>
@@ -40,6 +43,35 @@ export const Mainapp = () => {
                   <option value="8">8 tablets</option>
                   <option value="9">9 tablets</option>
                   <option value="10">10 tablets</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="name-fields">
+              <div className="login-form-group">
+                <label htmlFor="second-prescription-time" className="login-form-label">Prescription Time:</label> {/* Changed label */}
+                <TimePicker
+                  onChange={setSecondPrescriptionTime}
+                  value={secondPrescriptionTime}
+                  disableClock={true} // Disables the clock to allow manual time input
+                  className="login-form-input-date"
+                  clearIcon={null} // Hides the clear icon
+                  clockIcon={null} // Hides the clock icon
+                />
+              </div>
+              <div className="login-form-group">
+                <label htmlFor="dosage" className="login-form-label">Dosage:</label>
+                <select className="login-form-input" id="dosage">
+                  <option value="1">1x Daily</option>
+                  <option value="2">2x Daily</option>
+                  <option value="3">3x Daily</option>
+                  <option value="4">4x Daily</option>
+                  <option value="5">5x Daily</option>
+                  <option value="6">6x Daily</option>
+                  <option value="7">7x Daily</option>
+                  <option value="8">8x Daily</option>
+                  <option value="9">9x Daily</option>
+                  <option value="10">10x Daily</option>
                 </select>
               </div>
             </div>
