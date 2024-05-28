@@ -102,6 +102,10 @@ export const Mainapp = () => {
               <textarea id="description" className="login-form-input-d" placeholder="Information about the medication" />
             </div>
 
+
+
+            
+
             <button type="submit" className="login-form-button">Add reminder</button>
           </form>
         </div>

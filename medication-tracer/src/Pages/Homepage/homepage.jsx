@@ -69,7 +69,7 @@ const Homepage = () => {
           <li><a href="#objectives" onClick={handleScrollToObjectives}>About</a></li>
           <li><a href="#works" onClick={handleScrollToWorks}>How it works</a></li> 
           <li><a href="#faqs" onClick={handleScrollToFAQs}>FAQs</a></li> {/* Updated link */}
-          <li><Link to="/log-in"><a href="#account">Don't have an account?</a></Link></li>
+          <li><Link to="/sign-up"><a href="#account">Don't have an account?</a></Link></li>
           <li><Link to="/log-in"><botton type="submit" className="item-container-1">Log In</botton></Link></li>
         </ul>
       </nav>
@@ -151,6 +151,11 @@ const Homepage = () => {
           <Link to="/sign-up"><button type="submit" className="item-container-1">Sign Up</button></Link>
         </div>
       </div>
+
+
+    
+
+
 
       <div className="footer">
         <nav>
