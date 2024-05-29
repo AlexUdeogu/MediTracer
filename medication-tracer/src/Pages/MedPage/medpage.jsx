@@ -20,7 +20,7 @@ const Medpage = () => {
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
          <li><a href="#service">@JohnDoe123</a></li>
-         <li><a href="#service">Log Out</a></li>
+         <li><Link to="/"><a href="#service">Log Out</a></Link></li>
           <li><a href="#"><botton type="submit" className="item-container"> JD </botton></a></li>
         </ul>
       </nav>
