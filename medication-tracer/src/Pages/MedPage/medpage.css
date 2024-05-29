@@ -6,7 +6,6 @@ nav {
     width: 100%;
 }
 
-
 nav ul {
     padding-right: 5%;
     margin: 0;
@@ -33,20 +32,18 @@ nav ul li a {
     color: #1C3A3E;
 }
 
-
 /* Centering .mainpage content */
 .mainpage {
     display: flex;
-    padding-top: 15vw;
+    margin-top: 0.5%;
     flex-direction: column;
     align-items: center;
     color: #1C3A3E;
-
     justify-content: center;
-    height: 98vh;
     text-align: center;
 }
-.mainpage-head{
+
+.mainpage-head {
     color: #1C3A3E;
     font-family: 'Playfair Display', serif;
 }
@@ -85,52 +82,63 @@ p {
 
 .nowrap {
     white-space: nowrap;
-  }
-  
+}
 
-.item-container-button{
+.item-container-button {
     margin: 20px;
-    
 }
 
 .item-container-main {
-    height: 40px;
     padding: 8px 40px;
-    width: 70%;
+    white-space: nowrap;
     border-radius: 6px;
     border: none;
-    background:  #1C3A3E;
+    background: #1C3A3E;
     color: var(--button-text);
-    font-size: 17px;
+    font-size: 15px;
     transition: background-color 0.3s ease;
-  }
-  
-  .item-container-main:hover {
+}
+
+.item-container-main:hover {
     background: #152a2e;
-  }
+}
+
+.item-container-main-2 {
+    padding: 8px 40px;
+    white-space: nowrap;
+    border-radius: 6px;
+    border: none;
+    background: #1C3A3E;
+    color: var(--button-text);
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.item-container-main-2:hover {
+    background: #152a2e;
+}
 
 /* Styles for the delete button */
-/* Styles for the delete button */
-.med-table button {
+.med-table .item-container-delete {
     height: 30px; /* Reduced button height */
-    padding: 4px 20px; /* Reduced padding */
+    padding: 8px 30px;
     border-radius: 6px;
     border: none;
-    background: #E53E3E;
+    background: #d9534f; /* Red color for delete button */
     color: white;
-    font-size: 14px; /* Reduced font size */
+    font-size: 15px; /* Reduced font size */
     display: inline-flex; /* Allows vertical centering */
     align-items: center; /* Centers text vertically */
     justify-content: center; /* Centers text horizontally */
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 5px; /* Add some space between buttons */
 }
 
-.med-table button:hover {
-    background: #C53030;
+.med-table .item-container-delete:hover {
+    background: #c9302c; /* Darker red on hover */
 }
 
-.footer-space{
+.footer-space {
     padding: 7%;
 }
-

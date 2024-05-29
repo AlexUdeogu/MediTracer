@@ -16,6 +16,7 @@ export const Mainapp = () => {
         <nav>
             <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
             <ul>
+                <li><Link to="/med-page"><a href="#service"> Back To Summary</a></Link></li>
                 <li><a href="#service">@JohnDoe123</a></li>
                 <li><a href="#"> <botton type="submit" className="item-container" > JD </botton></a></li>
             </ul>
@@ -23,7 +24,7 @@ export const Mainapp = () => {
       <div className="login-page">
         <div className="login-container">
           <form className="login-form">
-            <h2 className="login-title">Reminder VI</h2>
+            <h2 className="login-title">Reminder</h2>
             
             <div className="name-fields">
               <div className="login-form-group">
@@ -60,7 +61,7 @@ export const Mainapp = () => {
                 />
               </div>
               <div className="login-form-group">
-                <label htmlFor="dosage" className="login-form-label">Dosage:</label>
+                <label htmlFor="dosage" className="login-form-label">Daily Intake:</label>
                 <select className="login-form-input" id="dosage">
                   <option value="1">1x Daily</option>
                   <option value="2">2x Daily</option>
