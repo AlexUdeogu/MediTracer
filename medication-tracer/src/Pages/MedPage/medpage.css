@@ -86,6 +86,9 @@ p {
 
 .item-container-button {
     margin: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
 }
 
 .item-container-main {
