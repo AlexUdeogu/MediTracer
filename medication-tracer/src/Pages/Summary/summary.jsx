@@ -1,20 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './summary.css';
 
-const Summary = () => {
-  const [reminders, setReminders] = useState([]);
-
-  useEffect(() => {
-    const storedReminders = JSON.parse(localStorage.getItem('reminders')) || [];
-    setReminders(storedReminders);
-  }, []);
-
-  const deleteReminder = (index) => {
-    const updatedReminders = reminders.filter((_, i) => i !== index);
-    setReminders(updatedReminders);
-    localStorage.setItem('reminders', JSON.stringify(updatedReminders));
-  };
-
+const Summary = ({ reminders, onDeleteReminder }) => {
   return (
     <div>
       {reminders.length > 0 && (
@@ -42,7 +29,7 @@ const Summary = () => {
                 <td className="nowrap">{new Date(reminder.endDate).toLocaleDateString()}</td>
                 <td className="nowrap">{reminder.description}</td>
                 <td>
-                  <button onClick={() => deleteReminder(index)} className="item-container-delete">Delete</button>
+                  <button onClick={() => onDeleteReminder(index)} className="item-container-delete">Delete</button>
                 </td>
               </tr>
             ))}

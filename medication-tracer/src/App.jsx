@@ -6,15 +6,22 @@ import Homepage from './Pages/Homepage/homepage.jsx';
 import { Mainapp } from './Pages/Mainapp/Mainapp.jsx';
 import Medpage from './Pages/MedPage/medpage.jsx';
 import Summary from './Pages/Summary/summary.jsx'; 
+
 function App() {
+  const [showMainApp, setShowMainApp] = useState(false);
+
+  const toggleMainApp = () => {
+    setShowMainApp(!showMainApp);
+  };
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/log-in" element={<Login />} />
-        <Route path="/main-app" element={<Mainapp />} />
-        <Route path="/med-page" element={<Medpage />} />
+        <Route path="/main-app" element={<Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} />} />
+        <Route path="/med-page" element={<Medpage toggleMainApp={toggleMainApp} showMainApp={showMainApp} />} />
         <Route path="/summary" element={<Summary />} />
       </Routes>
     </>
