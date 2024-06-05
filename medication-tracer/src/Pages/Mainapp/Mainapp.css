@@ -135,15 +135,13 @@ body {
 }
 
 .item-container {
-  height: 20px;
-  padding: 10px 10px;
-  width: 20%;
-  margin-top: 9px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   border: none;
   background: #0F2B2D;
   color: white;
-  font-size: 17px;
+  font-size: 15px;
   transition: background-color 0.3s ease;
 }
 
@@ -264,3 +262,6 @@ nav ul li a {
 .react-datepicker__navigation--next:hover {
   border-color: #1C3A3E;
 }
+
+
+

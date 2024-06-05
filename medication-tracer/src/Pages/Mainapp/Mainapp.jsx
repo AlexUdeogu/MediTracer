@@ -3,47 +3,77 @@ import DatePicker from 'react-datepicker';
 import TimePicker from 'react-time-picker'; // Importing the TimePicker component
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css'; // Importing TimePicker styles
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Mainapp.css';
 
 export const Mainapp = () => {
+  const navigate = useNavigate(); // Hook to navigate programmatically
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [secondPrescriptionTime, setSecondPrescriptionTime] = useState('12:00'); // New state for the second prescription time
+  const [prescriptionName, setPrescriptionName] = useState('');
+  const [dosage, setDosage] = useState('1');
+  const [dailyIntake, setDailyIntake] = useState('1');
+  const [description, setDescription] = useState('');
+
+  const handleAddReminder = (e) => {
+    e.preventDefault();
+    const newReminder = {
+      prescriptionName,
+      dosage,
+      secondPrescriptionTime,
+      dailyIntake,
+      startDate,
+      endDate,
+      description,
+    };
+
+    const reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    reminders.push(newReminder);
+    localStorage.setItem('reminders', JSON.stringify(reminders));
+
+    navigate('/med-page'); // Navigate to the medpage
+  };
 
   return (
     <div>
-        <nav>
-            <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
-            <ul>
-                <li><Link to="/med-page"><a href="#service"> Back To Summary</a></Link></li>
-                <li><a href="#service">@JohnDoe123</a></li>
-                <li><a href="#"> <botton type="submit" className="item-container" > JD </botton></a></li>
-            </ul>
-        </nav>
+      <nav>
+        <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
+        <ul>
+          <li><Link to="/med-page"><a href="#service"> Back To Summary</a></Link></li>
+          <li><a href="#service">@JohnDoe123</a></li>
+          <li><a href="#"> <button type="submit" className="item-container"> JD </button></a></li>
+        </ul>
+      </nav>
       <div className="login-page">
         <div className="login-container">
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleAddReminder}>
             <h2 className="login-title">Reminder</h2>
             
             <div className="name-fields">
               <div className="login-form-group">
                 <label htmlFor="prescription-name" className="login-form-label">Prescription Name:</label>
-                <input className="login-form-input" id="prescription-name" placeholder="Paracetamol" />
+                <input
+                  className="login-form-input"
+                  id="prescription-name"
+                  placeholder="Paracetamol"
+                  value={prescriptionName}
+                  onChange={(e) => setPrescriptionName(e.target.value)}
+                  required
+                />
               </div>
               <div className="login-form-group">
                 <label htmlFor="dosage" className="login-form-label">Dosage:</label>
-                <select className="login-form-input" id="dosage">
-                  <option value="1">1 tablet</option>
-                  <option value="2">2 tablets</option>
-                  <option value="3">3 tablets</option>
-                  <option value="4">4 tablets</option>
-                  <option value="5">5 tablets</option>
-                  <option value="6">6 tablets</option>
-                  <option value="7">7 tablets</option>
-                  <option value="8">8 tablets</option>
-                  <option value="9">9 tablets</option>
-                  <option value="10">10 tablets</option>
+                <select
+                  className="login-form-input"
+                  id="dosage"
+                  value={dosage}
+                  onChange={(e) => setDosage(e.target.value)}
+                >
+                  {[...Array(10).keys()].map(i => (
+                    <option key={i+1} value={i+1}>{i+1} tablet{ i > 0 && 's' }</option>
+                  ))}
+                  
                 </select>
               </div>
             </div>
@@ -61,18 +91,17 @@ export const Mainapp = () => {
                 />
               </div>
               <div className="login-form-group">
-                <label htmlFor="dosage" className="login-form-label">Daily Intake:</label>
-                <select className="login-form-input" id="dosage">
-                  <option value="1">1x Daily</option>
-                  <option value="2">2x Daily</option>
-                  <option value="3">3x Daily</option>
-                  <option value="4">4x Daily</option>
-                  <option value="5">5x Daily</option>
-                  <option value="6">6x Daily</option>
-                  <option value="7">7x Daily</option>
-                  <option value="8">8x Daily</option>
-                  <option value="9">9x Daily</option>
-                  <option value="10">10x Daily</option>
+                <label htmlFor="daily-intake" className="login-form-label">Daily Intake:</label>
+                <select
+                  className="login-form-input"
+                  id="daily-intake"
+                  value={dailyIntake}
+                  onChange={(e) => setDailyIntake(e.target.value)}
+                  
+                >
+                  {[...Array(10).keys()].map(i => (
+                    <option key={i+1} value={i+1}>{i+1}x Daily</option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -100,12 +129,14 @@ export const Mainapp = () => {
 
             <div className="login-form-group">
               <label htmlFor="description" className="login-form-label">Description:</label>
-              <textarea id="description" className="login-form-input-d" placeholder="Information about the medication" />
+              <textarea
+                id="description"
+                className="login-form-input-d"
+                placeholder="Information about the medication"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </div>
-
-
-
-            
 
             <button type="submit" className="login-form-button">Add reminder</button>
           </form>
