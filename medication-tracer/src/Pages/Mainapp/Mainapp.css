@@ -27,8 +27,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%; 
-  height: 50%;
+  width: 100%; 
+  padding: 30px;
 }
 
 .login-title {
@@ -39,8 +39,7 @@ body {
 }
 
 .login-form {
-  width: 50%;
-  padding-top: 1%;
+  width: 100%;
 }
 
 .login-form-group {
@@ -187,6 +186,21 @@ nav ul li a {
 }
 
 /* Mainapp overlay .css */
+
+
+
+.close-button {
+  position: absolute;
+  top: 70px;
+  right: 370px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1C3A3E;
+}
+
+
 .mainapp-overlay {
   position: fixed;
   top: 0;

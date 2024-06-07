@@ -49,6 +49,7 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
       <div className="mainapp-content">
         <div className="login-page">
           <div className="login-container">
+            <button className="close-button" onClick={toggleMainApp}>X</button>
             <form className="login-form" onSubmit={handleAddReminder}>
               <h2 className="login-title">Reminder</h2>
               
