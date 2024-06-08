@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import TimePicker from 'react-time-picker'; // Importing the TimePicker component
+import TimePicker from 'react-time-picker';
 import 'react-datepicker/dist/react-datepicker.css';
-import 'react-time-picker/dist/TimePicker.css'; // Importing TimePicker styles
-import { Link, useNavigate } from "react-router-dom";
+import 'react-time-picker/dist/TimePicker.css';
+import { useNavigate } from "react-router-dom";
 import './Mainapp.css';
 
 export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [secondPrescriptionTime, setSecondPrescriptionTime] = useState('12:00'); // New state for the second prescription time
+  const [secondPrescriptionTime, setSecondPrescriptionTime] = useState('12:00');
   const [prescriptionName, setPrescriptionName] = useState('');
   const [dosage, setDosage] = useState('1');
   const [dailyIntake, setDailyIntake] = useState('1');
@@ -27,10 +27,8 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
       endDate,
     };
 
-    // Add the new reminder using the onAddReminder function passed from Medpage
     onAddReminder(newReminder);
 
-    // Reset the state values to clear the text boxes
     setPrescriptionName('');
     setDosage('1');
     setSecondPrescriptionTime('12:00');
@@ -39,8 +37,14 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
     setEndDate(new Date());
     setDescription('');
 
-    toggleMainApp(); // Hide the Mainapp overlay
-    navigate('/med-page'); // Navigate to the medpage
+    toggleMainApp();
+    navigate('/med-page');
+  };
+
+  const handleClose = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMainApp();
   };
 
   return (
@@ -49,10 +53,10 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
         <div className="login-page">
           <div className="login-container">
             <form className="login-form" onSubmit={handleAddReminder}>
-            <button className="close-button" onClick={toggleMainApp}>X</button>
+              <button type="button" className="close-button" onClick={handleClose}>X</button>
 
               <h2 className="login-title">Reminder</h2>
-              
+
               <div className="name-fields">
                 <div className="login-form-group">
                   <label htmlFor="prescription-name" className="login-form-label">Prescription Name:</label>
@@ -74,7 +78,7 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                     onChange={(e) => setDosage(e.target.value)}
                   >
                     {[...Array(10).keys()].map(i => (
-                      <option key={i+1} value={i+1}>{i+1} tablet{ i > 0 && 's' }</option>
+                      <option key={i + 1} value={i + 1}>{i + 1} tablet{ i > 0 && 's' }</option>
                     ))}
                   </select>
                 </div>
@@ -86,10 +90,10 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                   <TimePicker
                     onChange={setSecondPrescriptionTime}
                     value={secondPrescriptionTime}
-                    disableClock={true} // Disables the clock to allow manual time input
+                    disableClock={true}
                     className="login-form-input-time"
-                    clearIcon={null} // Hides the clear icon
-                    clockIcon={null} // Hides the clock icon
+                    clearIcon={null}
+                    clockIcon={null}
                   />
                 </div>
                 <div className="login-form-group">
@@ -101,7 +105,7 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                     onChange={(e) => setDailyIntake(e.target.value)}
                   >
                     {[...Array(10).keys()].map(i => (
-                      <option key={i+1} value={i+1}>{i+1}x Daily</option>
+                      <option key={i + 1} value={i + 1}>{i + 1}x Daily</option>
                     ))}
                   </select>
                 </div>
