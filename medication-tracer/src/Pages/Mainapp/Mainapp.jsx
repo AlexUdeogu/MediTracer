@@ -25,7 +25,6 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
       dailyIntake,
       startDate,
       endDate,
-      description,
     };
 
     // Add the new reminder using the onAddReminder function passed from Medpage
@@ -49,8 +48,9 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
       <div className="mainapp-content">
         <div className="login-page">
           <div className="login-container">
-            <button className="close-button" onClick={toggleMainApp}>X</button>
             <form className="login-form" onSubmit={handleAddReminder}>
+            <button className="close-button" onClick={toggleMainApp}>X</button>
+
               <h2 className="login-title">Reminder</h2>
               
               <div className="name-fields">
@@ -87,7 +87,7 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                     onChange={setSecondPrescriptionTime}
                     value={secondPrescriptionTime}
                     disableClock={true} // Disables the clock to allow manual time input
-                    className="login-form-input-date"
+                    className="login-form-input-time"
                     clearIcon={null} // Hides the clear icon
                     clockIcon={null} // Hides the clock icon
                   />
@@ -127,18 +127,6 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                   />
                 </div>
               </div>
-
-              <div className="login-form-group">
-                <label htmlFor="description" className="login-form-label">Description:</label>
-                <textarea
-                  id="description"
-                  className="login-form-input-d"
-                  placeholder="Information about the medication"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </div>
-
               <button type="submit" className="login-form-button">Add reminder</button>
             </form>
           </div>

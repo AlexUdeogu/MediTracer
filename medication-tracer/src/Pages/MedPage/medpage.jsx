@@ -6,10 +6,16 @@ import Mainapp from '../Mainapp/Mainapp.jsx';
 
 const Medpage = ({ toggleMainApp, showMainApp }) => {
   const [reminders, setReminders] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const storedReminders = JSON.parse(localStorage.getItem('reminders')) || [];
     setReminders(storedReminders);
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser) {
+      setUser(storedUser);
+    }
   }, []);
 
   const addReminder = (newReminder) => {
@@ -29,9 +35,9 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
       <nav>
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
-          <li><a href="#service">@JohnDoe123</a></li>
+          <li><a href="#service">@{user ? user.username : "JohnDoe123"}</a></li>
           <li><Link to="/"><a href="#service">Log Out</a></Link></li>
-          <li><a href="#"><button type="submit" className="item-container"> JD </button></a></li>
+          <li><a href="#"><button type="submit" className="item-container"> {user ? user.firstName[0] + user.lastName[0] : "JD"} </button></a></li>
         </ul>
       </nav>
       <div className="mainpage">
@@ -45,7 +51,6 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
         <div className="item-container-button">
           <button type="button" className="item-container-main" onClick={toggleMainApp}>Add new reminder</button>
         </div>
-
       </div>
       <Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} onAddReminder={addReminder} />
       <div className="footer-space"></div>

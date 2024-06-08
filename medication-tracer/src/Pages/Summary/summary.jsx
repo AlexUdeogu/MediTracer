@@ -14,7 +14,6 @@ const Summary = ({ reminders, onDeleteReminder }) => {
               <th className="nowrap">Daily Intake</th>
               <th className="nowrap">Starting From</th>
               <th className="nowrap">Ending On</th>
-              <th className="nowrap">Description</th>
               <th className="nowrap">Action</th>
             </tr>
           </thead>
@@ -27,7 +26,6 @@ const Summary = ({ reminders, onDeleteReminder }) => {
                 <td className="nowrap">{reminder.dailyIntake}</td>
                 <td className="nowrap">{new Date(reminder.startDate).toLocaleDateString()}</td>
                 <td className="nowrap">{new Date(reminder.endDate).toLocaleDateString()}</td>
-                <td className="nowrap">{reminder.description}</td>
                 <td>
                   <button onClick={() => onDeleteReminder(index)} className="item-container-delete">Delete</button>
                 </td>

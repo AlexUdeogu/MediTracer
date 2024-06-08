@@ -8,14 +8,10 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const predefinedUser = {
-    username: "alexudeogu@gmail.com",
-    password: "JD2Audex",
-  };
-
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === predefinedUser.username && password === predefinedUser.password) {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser && storedUser.username === username && storedUser.password === password) {
       navigate('/med-page');
     } else {
       alert('Invalid username or password');

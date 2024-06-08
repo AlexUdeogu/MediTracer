@@ -98,6 +98,7 @@ p {
     border: none;
     background: #1C3A3E;
     color: var(--button-text);
+    font-weight: 600;
     font-size: 15px;
     transition: background-color 0.3s ease;
 }

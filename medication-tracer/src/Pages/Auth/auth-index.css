@@ -184,6 +184,7 @@
     background: #1C3A3E;
     color: var(--button-text);
     font-weight: 600;
+    white-space: nowrap;
     transition: background-color 0.3s ease;
 }
  .item-container-1:hover {
