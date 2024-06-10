@@ -30,6 +30,9 @@ const AccordionSummary = styled((props) => (
   },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
+    fontWeight: 300,
+    fontSize: 17,
+    letterSpacing: -0.01,
     fontFamily: 'Playfair Display', // Change font to Playfair
   },
 }));
@@ -52,35 +55,26 @@ export default function CustomizedAccordions() {
     <Container> {/* Container div with width and margin styling */}
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          Question 1
+        How does the medication reminder feature work?
         </AccordionSummary>
         <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          The medication reminder feature allows you to set specific times for taking your medications. You can input the medication name, dosage, daily intake frequency, and the start and end dates for the prescription. When it's time to take your medication, you'll receive a notification. This ensures you never miss a dose and helps you maintain your health regimen effectively.
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          Question 2
+        Can I manage multiple medications and health products?
         </AccordionSummary>
         <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+        Yes, you can manage multiple medications and health-related products using our app. Each medication can have its own set of reminders, and you can track different health products as well. The app allows you to input detailed information for each item, including dosage, intake frequency, and duration, making it easy to handle all your health needs in one place.
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          Question 3
+        How do I get notified about my medication times?
         </AccordionSummary>
         <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+        You will receive notifications via email when it's time to take your medication. The app ensures that these notifications are sent within the start and end dates you specify, and they are timed to match your prescribed schedule. This way, you can be confident that you won't miss any doses and can stay on top of your health routine.
         </AccordionDetails>
       </Accordion>
     </Container>

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './homepage.css';
 import temp from '../../assets/Temp1.png';
-import introimage from '../../assets/intro-img.png';
 import { Link } from "react-router-dom";
 import FAQ from '../../Components/Accordion/acc.jsx';
 
@@ -75,8 +74,10 @@ const Homepage = () => {
       </nav>
 
       <div className='intro'>
-        <h1 className='intro-text'>Get ready to <br/><span className="highlight">supercharge</span> <br/> your health<br/>and planning<br/>like never <br/>before.</h1>
-        <img src={introimage} alt="Medication" className='intro-image1'/>
+        <h1 className='intro-text'>Get ready to <span className="highlight">supercharge</span>  <br/> your health and planning<br/>like never before.</h1>
+        <p className='intro-text-para-1'>
+          Be on the top of your game with our cutting edge reminder system.
+        </p>
       </div>
 
       <div className='Vision' id="objectives" ref={objectivesRef}>
@@ -107,7 +108,7 @@ const Homepage = () => {
         <div className="work-intro-text">
           <div className="work-header">
             <h1 className='work-header-text'>
-              Unlock your full potential <br/> with our cutting-edge features
+            Stay on top of your health <br/> with our cutting-edge features
             </h1>
             <p className='work-header-para'>
               From intuitive task management to advanced data analytics, our software equips <br/> you with the tools you need to thrive in today's competitive business landscape.
@@ -120,7 +121,7 @@ const Homepage = () => {
               Easily tracing your Medication, <br/> every day, every week, with ease
             </h1>
             <p>
-              easily handle your medication, and other health related products
+              Effortlessly manage your medications and other health-related needs.
             </p>
           </div>
           <img src={temp} alt="Medication" className='work-image'/>

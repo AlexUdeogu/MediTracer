@@ -81,32 +81,29 @@
 }
 
 .intro {
-  padding-left: 100px;
-  padding-top: 110px;
-  padding-bottom: 15px;
-  display: flex;
+  padding: 190px;
+  display: grid;
+  place-items: center;
   background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+}
+
+.intro-text-para-1{
+  text-align: center;
+  width: 42vw;
+  white-space: nowrap; 
+  color: #1C3A3E;
 }
 
 .intro-text {
   font-family: 'Playfair Display', serif;
-  font-size: 400%;
-  margin-right: 20px;
-  padding-left: 13.5%;
+  font-size: 440%;
   color: #555555;
-  text-align: right;
+  text-align: center;
   line-height: 75px;
   white-space: nowrap;    
-}
-
-.intro-image1 {
-  aspect-ratio: 16 / 9;
-  width: 750px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 0;
 }
 
 .highlight {
@@ -168,7 +165,7 @@
 }
 
 .card-text {
-  font-size: 110%;
+  font-size: 120%;
   font-weight: 300;
 }
 
@@ -262,7 +259,8 @@
 }
 
 .work-header-para{
-  color: #1C3A3E;
+text-align: center;  
+color: #1C3A3E;
 }
 
 .faq-header {
@@ -272,7 +270,9 @@
 
 .faq-intro-text {
   padding-top: 8%;
+  margin: 40px;
 }
+
 
 .faq-header-text {
   text-align: center;
