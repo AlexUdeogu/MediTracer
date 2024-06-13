@@ -34,14 +34,14 @@ const LoginPage = () => {
             <h2 className="login-title-1">Log In</h2>
 
             <div className="login-form-group-1">
-              <label htmlFor="username" className="login-form-label-1">Username or Email:</label>
+              <label htmlFor="username" className="login-form-label-1">Username:</label>
               <input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
                 id="username"
                 className="login-form-input-1"
-                placeholder="Enter your username or email"
+                placeholder="Enter your username"
                 required
               />
             </div>

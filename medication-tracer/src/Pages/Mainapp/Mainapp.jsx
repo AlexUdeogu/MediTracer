@@ -53,8 +53,6 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
         <div className="login-page">
           <div className="login-container">
             <form className="login-form" onSubmit={handleAddReminder}>
-              <button type="button" className="close-button" onClick={handleClose}>X</button>
-
               <h2 className="login-title">Reminder</h2>
 
               <div className="name-fields">
@@ -131,7 +129,10 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                   />
                 </div>
               </div>
-              <button type="submit" className="login-form-button">Add reminder</button>
+              <div className="button-container">
+                <button type="submit" className="login-form-button">Add reminder</button>
+                <button type="button" className="close-button" onClick={handleClose}>Close</button>
+              </div>
             </form>
           </div>
         </div>

@@ -35,7 +35,7 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
       <nav>
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
-          <li><a href="#service">@{user ? user.username : "JohnDoe123"}</a></li>
+          <li><a href="#service">{user ? user.username : "JohnDoe123"}</a></li>
           <li><Link to="/"><a href="#service">Log Out</a></Link></li>
           <li><a href="#"><button type="submit" className="item-container"> {user ? user.firstName[0] + user.lastName[0] : "JD"} </button></a></li>
         </ul>

@@ -194,6 +194,7 @@
 
 .works {
   display: grid;
+  padding-top: 3%;
   place-items: center; /* Center both horizontally and vertically */
   height: 80vh;
 }
@@ -245,7 +246,7 @@
 }
 
 .work-intro-text {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-top: 50px;
 }
 
@@ -253,6 +254,7 @@
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-bottom: 15px;
+  
   font-size: 45px;
   line-height: 50px;
   color: #0F2B2D;
@@ -263,6 +265,11 @@ text-align: center;
 color: #1C3A3E;
 }
 
+.faq{
+  padding-top: 3%;
+}
+
+
 .faq-header {
   align-items: center;
   justify-content: center;
@@ -270,7 +277,6 @@ color: #1C3A3E;
 
 .faq-intro-text {
   padding-top: 8%;
-  margin: 40px;
 }
 
 

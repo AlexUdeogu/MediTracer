@@ -88,7 +88,7 @@ p {
     margin: 20px;
     display: flex;
     justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
+    align-items: center; /* Vaertically center the content */
 }
 
 .item-container-main {
@@ -127,20 +127,23 @@ p {
     height: 30px; /* Reduced button height */
     padding: 8px 30px;
     border-radius: 6px;
-    border: none;
-    background: #d9534f; /* Red color for delete button */
-    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d9534f;
+    background: #ffffff; /* Red color for delete button */
+    color: #d9534f;
     font-size: 15px; /* Reduced font size */
     display: inline-flex; /* Allows vertical centering */
     align-items: center; /* Centers text vertically */
     justify-content: center; /* Centers text horizontally */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     margin: 5px; /* Add some space between buttons */
 }
 
 .med-table .item-container-delete:hover {
-    background: #c9302c; /* Darker red on hover */
+    background: #c9302c; 
+    color: #ffffff;/* Darker red on hover */
 }
 
 .footer-space {

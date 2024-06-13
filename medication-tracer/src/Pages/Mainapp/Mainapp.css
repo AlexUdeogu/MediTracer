@@ -200,18 +200,37 @@ nav ul li a {
 
 /* Mainapp overlay .css */
 
+.button-container {
+  display: flex;
+  gap: 120px; /* Adjust the gap as needed */
+}
+
+
+
 
 
 .close-button {
-  position: absolute;
-  top: 150px;
-  right: 370px;
-  background: none;
+  width: 30%;
+  margin-top: 10px;
+  padding: 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
   border: none;
-  font-size: 23.5px;
+  background: #d9534f; /* Red color for delete button */
+  color: var(--button-text);
+  font-size: 17px;
   font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
-  color: #1C3A3E;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  text-align: center; 
+}
+
+.close-button:hover {
+  background: #c9302c; /* Darker red on hover */
 }
 
 
