@@ -31,11 +31,20 @@ body {
   padding: 20px;
 }
 
+.title-top{
+  margin-top: 5px;	
+  margin-bottom: 30px;
+}
+
 .login-title {
   font-family: var(--heading-font);
   text-align: center;
-  margin-bottom: 1rem;
   font-size: 60px;
+}
+.login-description{
+  margin: 0;
+  justify-content: center;
+  text-align: center;
 }
 
 .login-form {
@@ -84,8 +93,6 @@ body {
   color: var(--text);
 }
 
-
-
 .login-form-input-date {  
   display: inline-block;
   padding: 0.5rem;
@@ -95,31 +102,6 @@ body {
   color: var(--text);
 }
 
-
-
-.login-form-button {
-  margin-left: 2%;
-  width: 30%;
-  margin-top: 10px;
-  padding: 0.75rem;
-  border-radius: 6px;
-  white-space: nowrap;
-  border: none;
-  background: #0F2B2D;
-  color: var(--button-text);
-  font-size: 17px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; /* This might be redundant due to flex properties */
-}
-
-
-.login-form-button:hover {
-  background: #000000;
-}
 
 ::placeholder {
   color: rgb(153, 153, 153); 
@@ -162,7 +144,7 @@ body {
   background: #000000;
 }
 
-nav{
+nav {
   display: flex;
   width: 100vw;
   align-items: center;
@@ -173,11 +155,11 @@ nav{
   border: 1px solid rgba(128, 128, 128, 0.15);
 }
 
-nav ul{
+nav ul {
   padding-right: 5%;
 }
 
-nav ul li{
+nav ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 15px;
@@ -189,7 +171,7 @@ nav ul li a {
   color: #1C3A3E;
 }
 
-.logo{
+.logo {
   padding: 10px;
   margin-left: 40px;
   font-size: 30px;
@@ -204,10 +186,6 @@ nav ul li a {
   display: flex;
   gap: 120px; /* Adjust the gap as needed */
 }
-
-
-
-
 
 .close-button {
   width: 30%;
@@ -232,7 +210,6 @@ nav ul li a {
 .close-button:hover {
   background: #c9302c; /* Darker red on hover */
 }
-
 
 .mainapp-overlay {
   position: fixed;
@@ -332,4 +309,76 @@ nav ul li a {
 .react-time-picker__inputGroup__input {
   border: none; /* Remove input border */
   outline: none; /* Remove default outline */
+  color: var(--text); /* Match text color */
+  background-color: var(--input-background); /* Match background color */
+}
+
+.react-time-picker__inputGroup__leadingZero {
+  color: var(--text); /* Match text color */
+}
+
+.react-time-picker__inputGroup__divider {
+  color: var(--text); /* Match text color */
+}
+
+.react-time-picker__inputGroup {
+  color: var(--text); /* Match text color */
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  gap: 10px; /* Adjust the gap between buttons */
+}
+
+.login-form-button,
+.close-button,
+.add-time-button {
+  flex: 0.5; /* Equal width for all buttons */
+  margin-top: 10px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  border: none;
+  background: #0F2B2D; /* Default button background */
+  color: var(--button-text);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.login-form-button:hover,
+.close-button:hover,
+.add-time-button:hover {
+  background: #000000; /* Darker background on hover */
+}
+
+.remove-time{
+  height: 30px; /* Reduced button height */
+  padding: 5px 10px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9534f;
+  background: #ffffff; /* Red color for delete button */
+  color: #d9534f;
+  font-size: 13px; /* Reduced font size */
+  display: inline-flex; /* Allows vertical centering */
+  align-items: center; /* Centers text vertically */
+  justify-content: end; /* Centers text horizontally */
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin: 5px; /* Add some space between buttons */
+}
+
+.remove-time:hover {
+  background: #c9302c; 
+  color: #ffffff;/* Darker red on hover */
 }

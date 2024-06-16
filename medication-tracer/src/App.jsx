@@ -3,7 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Login from "./Pages/Auth/index.jsx";
 import Signup from './Pages/Signup/index.jsx';
 import Homepage from './Pages/Homepage/homepage.jsx';
-import { Mainapp } from './Pages/Mainapp/Mainapp.jsx';
+import  Mainapp  from './Pages/Mainapp/Mainapp.jsx';
 import Medpage from './Pages/MedPage/medpage.jsx';
 import Summary from './Pages/Summary/summary.jsx'; 
 

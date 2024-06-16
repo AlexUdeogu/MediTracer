@@ -1,50 +1,68 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
 import TimePicker from 'react-time-picker';
-import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import { useNavigate } from "react-router-dom";
 import './Mainapp.css';
 
-export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
+const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   const navigate = useNavigate();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [secondPrescriptionTime, setSecondPrescriptionTime] = useState('12:00');
+  const initialPrescriptionTimes = ['12:00'];
   const [prescriptionName, setPrescriptionName] = useState('');
   const [dosage, setDosage] = useState('1');
   const [dailyIntake, setDailyIntake] = useState('1');
-  const [description, setDescription] = useState('');
+  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes); // Initial state with one time input
 
   const handleAddReminder = (e) => {
     e.preventDefault();
     const newReminder = {
       prescriptionName,
       dosage,
-      secondPrescriptionTime,
       dailyIntake,
-      startDate,
-      endDate,
+      prescriptionTimes,
+      startDate: new Date().toISOString(), // Example start date
+      endDate: null, // Example end date
     };
 
     onAddReminder(newReminder);
 
+    // Update local storage
+    const reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    localStorage.setItem('reminders', JSON.stringify([...reminders, newReminder]));
+
+    // Reset form fields
     setPrescriptionName('');
     setDosage('1');
-    setSecondPrescriptionTime('12:00');
     setDailyIntake('1');
-    setStartDate(new Date());
-    setEndDate(new Date());
-    setDescription('');
+    setPrescriptionTimes(initialPrescriptionTimes);
 
     toggleMainApp();
     navigate('/med-page');
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleClose = () => {
+    setPrescriptionName('');
+    setDosage('1');
+    setDailyIntake('1');
+    setPrescriptionTimes(initialPrescriptionTimes);
     toggleMainApp();
+  };
+
+  const handleAddTime = () => {
+    setPrescriptionTimes([...prescriptionTimes, '12:00']);
+  };
+
+  const handleTimeChange = (index, newTime) => {
+    const updatedTimes = [...prescriptionTimes];
+    updatedTimes[index] = newTime;
+    setPrescriptionTimes(updatedTimes);
+  };
+
+  const handleDeleteTime = (index) => {
+    if (prescriptionTimes.length > 1) {
+      const updatedTimes = [...prescriptionTimes];
+      updatedTimes.splice(index, 1);
+      setPrescriptionTimes(updatedTimes);
+    }
   };
 
   return (
@@ -53,7 +71,12 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
         <div className="login-page">
           <div className="login-container">
             <form className="login-form" onSubmit={handleAddReminder}>
+              <div className="title-top">
               <h2 className="login-title">Reminder</h2>
+              <p className='login-description'>
+                Add a reminder to make sure your don't miss your medication.
+              </p>
+              </div>
 
               <div className="name-fields">
                 <div className="login-form-group">
@@ -82,55 +105,26 @@ export const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                 </div>
               </div>
 
-              <div className="name-fields">
-                <div className="login-form-group">
-                  <label htmlFor="second-prescription-time" className="login-form-label">Prescription Time:</label>
+              {prescriptionTimes.map((time, index) => (
+                <div className="login-form-group" key={index}>
+                  <label className="login-form-label">Reminder Time:</label>
                   <TimePicker
-                    onChange={setSecondPrescriptionTime}
-                    value={secondPrescriptionTime}
+                    value={time}
+                    onChange={(newTime) => handleTimeChange(index, newTime)}
                     disableClock={true}
                     className="login-form-input-time"
                     clearIcon={null}
                     clockIcon={null}
                   />
+                  {index > 0 && (
+                    <button type="button" className='remove-time' onClick={() => handleDeleteTime(index)}>Remove</button>
+                  )}
                 </div>
-                <div className="login-form-group">
-                  <label htmlFor="daily-intake" className="login-form-label">Daily Intake:</label>
-                  <select
-                    className="login-form-input"
-                    id="daily-intake"
-                    value={dailyIntake}
-                    onChange={(e) => setDailyIntake(e.target.value)}
-                  >
-                    {[...Array(10).keys()].map(i => (
-                      <option key={i + 1} value={i + 1}>{i + 1}x Daily</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+              ))}
 
-              <div className="user-fields">
-                <div className="login-form-group">
-                  <label htmlFor="starting-from" className="login-form-label">Starting From:</label>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    className="login-form-input-date"
-                    dateFormat="dd-MM-yyyy"
-                  />
-                </div>
-                <div className="login-form-group">
-                  <label htmlFor="ending-on" className="login-form-label">Ending On:</label>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                    className="login-form-input-date"
-                    dateFormat="dd-MM-yyyy"
-                  />
-                </div>
-              </div>
               <div className="button-container">
-                <button type="submit" className="login-form-button">Add reminder</button>
+                <button type="submit" className="login-form-button">Add Reminder</button>
+                <button type="button" className="add-time-button" onClick={handleAddTime}>Add Time Slot</button>
                 <button type="button" className="close-button" onClick={handleClose}>Close</button>
               </div>
             </form>
