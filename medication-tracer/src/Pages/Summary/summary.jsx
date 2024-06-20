@@ -27,7 +27,7 @@ const Summary = ({ reminders, onDeleteReminder }) => {
                   <td className="nowrap" >{reminder.prescriptionName}</td>
                   <td className="nowrap">
                     {isLoading ? 'Loading...' : isError ? 'Error retrive side effects' : (
-                      <ul style={{ fontSize: '14px' }} >
+                      <ul style={{ fontSize: '13px' }} >
                         {sideEffects?.slice(0, 3).map((effect, idx) => (
                           <p key={idx}>{effect.term}</p>
                         ))}

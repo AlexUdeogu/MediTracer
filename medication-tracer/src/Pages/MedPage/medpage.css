@@ -96,7 +96,7 @@ p {
     white-space: nowrap;
     border-radius: 6px;
     border: none;
-    background: #1C3A3E;
+    background: #152d30;
     color: var(--button-text);
     font-weight: 600;
     font-size: 15px;
@@ -104,7 +104,7 @@ p {
 }
 
 .item-container-main:hover {
-    background: #152a2e;
+    background: #0b1618;
 }
 
 .item-container-main-2 {
