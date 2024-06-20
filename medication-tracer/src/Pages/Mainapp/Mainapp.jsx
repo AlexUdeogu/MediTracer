@@ -38,6 +38,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
     toggleMainApp();
     navigate('/med-page');
   };
+  
 
   const handleClose = () => {
     setPrescriptionName('');
