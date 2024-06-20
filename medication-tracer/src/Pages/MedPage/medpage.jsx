@@ -53,8 +53,11 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
         </div>
       </div>
       <Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} onAddReminder={addReminder} />
-      <div className="footer-space"></div>
-    </div>
+
+      <div className="footer-2">
+            <p className='footer-text-2'> FDA data provided on potential side effects.</p>
+      </div>
+    </div>   
   );
 };
 
