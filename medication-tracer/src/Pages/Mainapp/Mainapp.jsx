@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import './Mainapp.css';
 
 const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
@@ -10,7 +10,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   const [prescriptionName, setPrescriptionName] = useState('');
   const [dosage, setDosage] = useState('1');
   const [dailyIntake, setDailyIntake] = useState('1');
-  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes); // Initial state with one time input
+  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes);
 
   const handleAddReminder = (e) => {
     e.preventDefault();
@@ -19,17 +19,12 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
       dosage,
       dailyIntake,
       prescriptionTimes,
-      startDate: new Date().toISOString(), // Example start date
-      endDate: null, // Example end date
+      startDate: new Date().toISOString(),
+      endDate: null,
     };
 
     onAddReminder(newReminder);
 
-    // Update local storage
-    const reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-    localStorage.setItem('reminders', JSON.stringify([...reminders, newReminder]));
-
-    // Reset form fields
     setPrescriptionName('');
     setDosage('1');
     setDailyIntake('1');
@@ -38,7 +33,6 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
     toggleMainApp();
     navigate('/med-page');
   };
-  
 
   const handleClose = () => {
     setPrescriptionName('');
@@ -73,10 +67,8 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
           <div className="login-container">
             <form className="login-form" onSubmit={handleAddReminder}>
               <div className="title-top">
-              <h2 className="login-title">Reminder</h2>
-              <p className='login-description'>
-                Add a reminder to make sure your don't miss your medication.
-              </p>
+                <h2 className="login-title">Reminder</h2>
+                <p className='login-description'>Add a reminder to make sure your don't miss your medication.</p>
               </div>
 
               <div className="name-fields">

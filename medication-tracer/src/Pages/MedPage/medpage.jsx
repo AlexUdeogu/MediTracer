@@ -3,6 +3,7 @@ import './medpage.css';
 import { Link } from "react-router-dom";
 import Summary from '../Summary/summary.jsx';
 import Mainapp from '../Mainapp/Mainapp.jsx';
+import addNotification from 'react-push-notification'
 
 const Medpage = ({ toggleMainApp, showMainApp }) => {
   const [reminders, setReminders] = useState([]);
@@ -17,6 +18,21 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
       setUser(storedUser);
     }
   }, []);
+
+
+  const clickToNotify = () => {
+    addNotification(
+      {
+        title: "Medication reminder",
+        message: "Visit your medication",
+        duration: 4000,
+        native: true,
+
+      }
+    );
+  }
+
+
 
   const addReminder = (newReminder) => {
     const updatedReminders = [...reminders, newReminder];
@@ -53,6 +69,8 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
         </div>
       </div>
       <Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} onAddReminder={addReminder} />
+
+
 
       <div className="footer-2">
             <p className='footer-text-2'> FDA data provided on potential side effects.</p>
