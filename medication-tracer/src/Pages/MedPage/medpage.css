@@ -36,6 +36,7 @@ nav ul li a {
 .mainpage {
     display: flex;
     margin-top: 0.5%;
+    margin-bottom: 5%;
     flex-direction: column;
     align-items: center;
     color: #1C3A3E;
@@ -84,27 +85,19 @@ p {
     white-space: nowrap;
 }
 
-.item-container-button {
-    margin: 20px;
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vaertically center the content */
-}
-
 .item-container-main {
-    padding: 8px 40px;
     white-space: nowrap;
+    margin: 20px;
     border-radius: 6px;
     border: none;
-    background: #152d30;
-    color: var(--button-text);
-    font-weight: 600;
+    color:  #152d30;
+    cursor: pointer;
     font-size: 15px;
     transition: background-color 0.3s ease;
 }
 
 .item-container-main:hover {
-    background: #0b1618;
+    color: #0b1618;
 }
 
 .item-container-main-2 {

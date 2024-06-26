@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import './Mainapp.css';
 
 const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   const navigate = useNavigate();
   const initialPrescriptionTimes = ['12:00'];
   const [prescriptionName, setPrescriptionName] = useState('');
-  const [dosage, setDosage] = useState('1');
-  const [dailyIntake, setDailyIntake] = useState('1');
-  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes);
+  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes); // Initial state with one time input
 
   const handleAddReminder = (e) => {
     e.preventDefault();
     const newReminder = {
       prescriptionName,
-      dosage,
-      dailyIntake,
       prescriptionTimes,
-      startDate: new Date().toISOString(),
-      endDate: null,
+      startDate: new Date().toISOString(), // Example start date
+      endDate: null, // Example end date
     };
 
     onAddReminder(newReminder);
 
+    // Update local storage
+    localStorage.setItem('prescriptionName', prescriptionName);
+    localStorage.setItem('reminderTimes', JSON.stringify(prescriptionTimes));
+
+    // Reset form fields
     setPrescriptionName('');
-    setDosage('1');
-    setDailyIntake('1');
     setPrescriptionTimes(initialPrescriptionTimes);
 
     toggleMainApp();
@@ -36,8 +35,6 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
 
   const handleClose = () => {
     setPrescriptionName('');
-    setDosage('1');
-    setDailyIntake('1');
     setPrescriptionTimes(initialPrescriptionTimes);
     toggleMainApp();
   };
@@ -68,7 +65,9 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
             <form className="login-form" onSubmit={handleAddReminder}>
               <div className="title-top">
                 <h2 className="login-title">Reminder</h2>
-                <p className='login-description'>Add a reminder to make sure your don't miss your medication.</p>
+                <p className='login-description'>
+                  Add a reminder to make sure you don't miss your medication.
+                </p>
               </div>
 
               <div className="name-fields">
@@ -82,19 +81,6 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
                     onChange={(e) => setPrescriptionName(e.target.value)}
                     required
                   />
-                </div>
-                <div className="login-form-group">
-                  <label htmlFor="dosage" className="login-form-label">Dosage:</label>
-                  <select
-                    className="login-form-input"
-                    id="dosage"
-                    value={dosage}
-                    onChange={(e) => setDosage(e.target.value)}
-                  >
-                    {[...Array(10).keys()].map(i => (
-                      <option key={i + 1} value={i + 1}>{i + 1} tablet{ i > 0 && 's' }</option>
-                    ))}
-                  </select>
                 </div>
               </div>
 

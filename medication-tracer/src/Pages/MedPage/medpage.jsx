@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './medpage.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Summary from '../Summary/summary.jsx';
 import Mainapp from '../Mainapp/Mainapp.jsx';
-import addNotification from 'react-push-notification'
 
 const Medpage = ({ toggleMainApp, showMainApp }) => {
   const [reminders, setReminders] = useState([]);
@@ -19,21 +18,6 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
     }
   }, []);
 
-
-  const clickToNotify = () => {
-    addNotification(
-      {
-        title: "Medication reminder",
-        message: "Visit your medication",
-        duration: 4000,
-        native: true,
-
-      }
-    );
-  }
-
-
-
   const addReminder = (newReminder) => {
     const updatedReminders = [...reminders, newReminder];
     setReminders(updatedReminders);
@@ -46,14 +30,19 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
     localStorage.setItem('reminders', JSON.stringify(updatedReminders));
   };
 
+  const handleCloseSummary = (index) => {
+    deleteReminder(index);
+  };
+
   return (
     <div className='body-page'>
       <nav>
         <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
         <ul>
-          <li><a href="#service">{user ? user.username : "JohnDoe123"}</a></li>
+          <button type="button" className="item-container-main" onClick={toggleMainApp}>Add Drug</button>
+          <li><a href="#service">{user ? user.username : 'JohnDoe123'}</a></li>
           <li><Link to="/"><a href="#service">Log Out</a></Link></li>
-          <li><a href="#"><button type="submit" className="item-container"> {user ? user.firstName[0] + user.lastName[0] : "JD"} </button></a></li>
+          <li><a href="#"><button type="submit" className="item-container"> {user ? user.firstName[0] + user.lastName[0] : 'JD'} </button></a></li>
         </ul>
       </nav>
       <div className="mainpage">
@@ -61,21 +50,24 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
           <h1 className='mainpage-head'>Medications</h1>
           <p>Manage your reminders and view their health performance.</p>
         </div>
-
-        <Summary reminders={reminders} onDeleteReminder={deleteReminder} />
-
-        <div className="item-container-button">
-          <button type="button" className="item-container-main" onClick={toggleMainApp}>Add new reminder</button>
-        </div>
       </div>
+
+      <div className="summary-grid">
+        {reminders.map((reminder, index) => (
+          <Summary
+            key={index}
+            reminder={reminder}
+            onDeleteReminder={() => handleCloseSummary(index)}
+          />
+        ))}
+      </div>
+
       <Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} onAddReminder={addReminder} />
 
-
-
       <div className="footer-2">
-            <p className='footer-text-2'> FDA data provided on potential side effects.</p>
+        <p className='footer-text-2'> FDA data provided on potential side effects.</p>
       </div>
-    </div>   
+    </div>
   );
 };
 
