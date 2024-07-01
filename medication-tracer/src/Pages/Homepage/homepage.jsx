@@ -62,8 +62,9 @@ const Homepage = () => {
 
   return (
     <div className='body-x'>
+      
       <nav className='navbar-x'>
-        <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
+        <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
         <ul>
           <li><a href="#objectives" onClick={handleScrollToObjectives}>About</a></li>
           <li><a href="#works" onClick={handleScrollToWorks}>How it works</a></li> 
@@ -72,33 +73,31 @@ const Homepage = () => {
           <li><Link to="/log-in"><botton type="submit" className="item-container-1">Log In</botton></Link></li>
         </ul>
       </nav>
-
       <div className='intro'>
         <h1 className='intro-text'>Get ready to <span className="highlight">supercharge</span>  <br/> your health and planning<br/>like never before.</h1>
         <p className='intro-text-para-1'>
           Be on the top of your game with our cutting edge reminder system.
         </p>
       </div>
-
       <div className='Vision' id="objectives" ref={objectivesRef}>
-        <h1 className='intro-description' ref={introDescriptionRef}>MediTracer's Objectives</h1>
+        <h1 className='intro-description' ref={introDescriptionRef}>MediGuide's Objectives</h1>
         <div className="cards">
           <div className="mission-card">
             <h1 className='card-head'>Mission</h1>
             <p className='card-text'>
-              Meditracer aims to transform healthcare through innovative technology, enhancing patient care, and simplifying administrative processes.
+              MediGuide aims to transform healthcare through innovative technology, enhancing patient care, and simplifying administrative processes.
             </p>
           </div>
           <div className="mission-card">
             <h1 className='card-head'>Vision</h1>  
             <p className='card-text'>
-              Meditracer envisions a future where healthcare is seamless, personalized, and accessible to all, empowering individuals and healthcare professionals alike to achieve better health outcomes.
+            MediGuide envisions a future where healthcare is seamless, personalized, and accessible to all, empowering individuals and healthcare professionals alike to achieve better health outcomes.
             </p>          
           </div>
           <div className="mission-card-wide">
             <h1 className='card-head'>Purpose</h1>
             <p className='card-text'>
-              Meditracer dreams of a tomorrow where healthcare transcends barriers, embracing seamless integration, personalization, and universal accessibility. Our purpose is a catalyst, empowering every individual and healthcare professional to forge pathways toward enhanced well-being and unprecedented health outcomes.
+            MediGuide dreams of a tomorrow where healthcare transcends barriers, embracing seamless integration, personalization, and universal accessibility. Our purpose is a catalyst, empowering every individual and healthcare professional to forge pathways toward enhanced well-being and unprecedented health outcomes.
             </p>          
           </div>
         </div>
@@ -153,14 +152,9 @@ const Homepage = () => {
         </div>
       </div>
 
-
-    
-
-
-
       <div className="footer">
         <nav>
-          <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
+          <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
           <ul>
             <li className='footer-text'>Design and Development by <a href='https://alex-portfolio-mu.vercel.app/' className='alex'>Alex Udeogu</a> - Copyright 2024</li>
           </ul>

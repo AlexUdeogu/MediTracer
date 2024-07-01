@@ -47,6 +47,7 @@ nav ul li a {
 .mainpage-head {
     color: #1C3A3E;
     font-family: 'Playfair Display', serif;
+    font-size: 40px;
 }
 
 .mainpage-title {
@@ -88,11 +89,12 @@ p {
 .item-container-main {
     white-space: nowrap;
     margin: 20px;
+    font-weight: 500;
     border-radius: 6px;
     border: none;
     color:  #152d30;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 

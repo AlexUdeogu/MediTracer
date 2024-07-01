@@ -14,7 +14,7 @@
 }
 
 .med-summary {
-    background-color: white;
+    background-color: rgb(255, 244, 223);
     border: #1C3A3E 2px solid;
     border-radius: 10px;
     padding: 30px;
@@ -56,10 +56,12 @@
     background: transparent;
     border: none;
     font-size: 20px;
+    font-weight: 600;
     cursor: pointer;
     color: #1C3A3E;
+    transition: 0.4s;
 }
 
 .close-btn:hover {
-    color: #b30000;
+    color: #ff3d3d;
 }

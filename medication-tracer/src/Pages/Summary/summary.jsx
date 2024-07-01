@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './summary.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,24 +8,37 @@ import {
   useFetchNdcDirectory,
   useFetchDrugsAtFda
 } from '../../Api/useFetchSideEffects.jsx';
+import { motion } from 'framer-motion';
 
 const Summary = ({ reminder, onDeleteReminder }) => {
   const drugName = reminder.prescriptionName;
   const reminderTime = reminder.prescriptionTimes.join(', ');
 
-  const { data: sideEffects } = useFetchSideEffects(drugName);
-  const { data: recallReports } = useFetchRecallReports(drugName);
-  const { data: productLabeling } = useFetchProductLabeling(drugName);
-  const { data: ndcDirectory } = useFetchNdcDirectory(drugName);
-  const { data: drugsAtFda } = useFetchDrugsAtFda(drugName);
+  const [loading, setLoading] = useState(true);
 
-  // Helper function to truncate arrays
-  const truncateArray = (arr, maxLength) => arr ? arr.slice(0, Math.ceil(maxLength / 2.5)) : [];
+  const { data: sideEffects, isLoading: sideEffectsLoading } = useFetchSideEffects(drugName);
+  const { data: recallReports, isLoading: recallReportsLoading } = useFetchRecallReports(drugName);
+  const { data: productLabeling, isLoading: productLabelingLoading } = useFetchProductLabeling(drugName);
+  const { data: ndcDirectory, isLoading: ndcDirectoryLoading } = useFetchNdcDirectory(drugName);
+  const { data: drugsAtFda, isLoading: drugsAtFdaLoading } = useFetchDrugsAtFda(drugName);
+
+  useEffect(() => {
+    if (!sideEffectsLoading && !recallReportsLoading && !productLabelingLoading && !ndcDirectoryLoading && !drugsAtFdaLoading) {
+      setLoading(false);
+    }
+  }, [sideEffectsLoading, recallReportsLoading, productLabelingLoading, ndcDirectoryLoading, drugsAtFdaLoading]);
+
+  const truncateArray = (arr, maxLength) => arr ? arr.slice(0, Math.ceil(maxLength / 3.5)) : [];
 
   return (
     <div className='med-summary'>
       <button className='close-btn' onClick={onDeleteReminder}>X</button>
-      <div className="drug-info-container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="drug-info-container"
+      >
         <div className="drug-title">
           <h1 className='drug'>{drugName}</h1>
         </div>
@@ -38,7 +51,8 @@ const Summary = ({ reminder, onDeleteReminder }) => {
           <p><span className='info-title'>NDC Directory:</span> {ndcDirectory?.product_ndc || 'Information not available'}</p>
           <p><span className='info-title'>Drugs@FDA:</span> {drugsAtFda?.application_number || 'Information not available'}</p>
         </div>
-      </div>
+      </motion.div>
+      {loading && <p className="loading-text" style={{ color: '#1C3A3E' }}>Loading...</p>}
     </div>
   );
 };

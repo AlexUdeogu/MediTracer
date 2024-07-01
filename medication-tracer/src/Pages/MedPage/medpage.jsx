@@ -19,7 +19,7 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
   }, []);
 
   const addReminder = (newReminder) => {
-    const updatedReminders = [...reminders, newReminder];
+    const updatedReminders = [newReminder, ...reminders]; // Prepend new reminder
     setReminders(updatedReminders);
     localStorage.setItem('reminders', JSON.stringify(updatedReminders));
   };
@@ -37,7 +37,7 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
   return (
     <div className='body-page'>
       <nav>
-        <a href='#' className='logo'> Medi<span className='logo-half'>Tracer</span></a>
+        <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
         <ul>
           <button type="button" className="item-container-main" onClick={toggleMainApp}>Add Drug</button>
           <li><a href="#service">{user ? user.username : 'JohnDoe123'}</a></li>
