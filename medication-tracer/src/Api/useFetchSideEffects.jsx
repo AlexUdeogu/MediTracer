@@ -2,13 +2,23 @@
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
+/**
+ * Fetches the side effects data for a given drug name from the FDA API.
+ *
+ * @param {string} drugName - The name of the drug to search for.
+ * @returns {Promise<Object>} - A promise that resolves to the side effects data.
+ */
 const fetchSideEffects = async (drugName) => {
-  const response = await axios.get(`https://api.fda.gov/drug/event.json`, {
-    params: {
-      search: `patient.drug.medicinalproduct:"${drugName}"`,
-      count: 'patient.reaction.reactionmeddrapt.exact',
-    }
-  });
+  // Construct the URL for the FDA API call
+  const url = 'https://api.fda.gov/drug/event.json';
+  // Construct the search parameters for the API call
+  const params = {
+    search: `patient.drug.medicinalproduct:"${drugName}"`, // search for the given drug name
+    count: 'patient.reaction.reactionmeddrapt.exact', // count the number of side effects
+  };
+  // Make the API call using axios
+  const response = await axios.get(url, { params });
+  // Return the data from the API call
   return response.data.results;
 };
 

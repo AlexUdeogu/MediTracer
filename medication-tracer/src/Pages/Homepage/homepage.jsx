@@ -64,19 +64,19 @@ const Homepage = () => {
     <div className='body-x'>
       
       <nav className='navbar-x'>
-        <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
+        <a href='#' className='logo-1'> Medi<span className='logo-half-1'>Guide</span></a>
         <ul>
-          <li><a href="#objectives" onClick={handleScrollToObjectives}>About</a></li>
-          <li><a href="#works" onClick={handleScrollToWorks}>How it works</a></li> 
-          <li><a href="#faqs" onClick={handleScrollToFAQs}>FAQs</a></li> {/* Updated link */}
-          <li><Link to="/sign-up"><a href="#account">Don't have an account?</a></Link></li>
+          <li><a href="#objectives" className="item-container-2" onClick={handleScrollToObjectives}>About</a></li>
+          <li><a href="#works" className="item-container-2" onClick={handleScrollToWorks}>How it works</a></li> 
+          <li><a href="#faqs" className="item-container-2" onClick={handleScrollToFAQs}>FAQs</a></li> {/* Updated link */}
+          <li><Link to="/sign-up"><a href="#account" className="item-container-2">Don't have an account?</a></Link></li>
           <li><Link to="/log-in"><botton type="submit" className="item-container-1">Log In</botton></Link></li>
         </ul>
       </nav>
       <div className='intro'>
         <h1 className='intro-text'>Get ready to <span className="highlight">supercharge</span>  <br/> your health and planning<br/>like never before.</h1>
         <p className='intro-text-para-1'>
-          Be on the top of your game with our cutting edge reminder system.
+          Be on top of your health game <br/> with  our cutting edge software.
         </p>
       </div>
       <div className='Vision' id="objectives" ref={objectivesRef}>
@@ -94,40 +94,34 @@ const Homepage = () => {
             MediGuide envisions a future where healthcare is seamless, personalized, and accessible to all, empowering individuals and healthcare professionals alike to achieve better health outcomes.
             </p>          
           </div>
-          <div className="mission-card-wide">
-            <h1 className='card-head'>Purpose</h1>
-            <p className='card-text'>
-            MediGuide dreams of a tomorrow where healthcare transcends barriers, embracing seamless integration, personalization, and universal accessibility. Our purpose is a catalyst, empowering every individual and healthcare professional to forge pathways toward enhanced well-being and unprecedented health outcomes.
-            </p>          
-          </div>
         </div>
       </div>
 
-      <div className="works" id="works"> 
+      <div className="works"> 
         <div className="work-intro-text">
           <div className="work-header">
             <h1 className='work-header-text'>
-            Stay on top of your health <br/> with our cutting-edge features
+            Stay on top of your health <br/> with our cutting-edge <br/> features
             </h1>
             <p className='work-header-para'>
-              From intuitive task management to advanced data analytics, our software equips <br/> you with the tools you need to thrive in today's competitive business landscape.
+              From intuitive task management to <br/> advanced data analytics, our software equips.
             </p>
           </div>
         </div>
         <div className='work-1'>
           <div className="text-content">
             <h1 className='text-content-header'>
-              Easily tracing your Medication, <br/> every day, every week, with ease
+              Easily tracing <br/> your Medication, <br/> every day, every <br/> week, with ease
             </h1>
-            <p>
-              Effortlessly manage your medications and other health-related needs.
+            <p className='text-content-para' >
+              Effortlessly manage get information <br/> on medications and other <br/> health-related needs.
             </p>
           </div>
           <img src={temp} alt="Medication" className='work-image'/>
         </div>
       </div>
 
-      <div className="faq" id="faqs"> {/* Added id attribute */}
+      <div className="faq"> 
         <div className="faq-side1">
           <div className="faq-intro-text">
             <div className="faq-header">
@@ -141,22 +135,21 @@ const Homepage = () => {
       </div>
 
       <div className="download">
-        <div>
+        <div className='download-text'>
           <h1 className="download-header-text">
             What are you waiting for?
           </h1>
           <p className="download-para-text">
-            Revolutionize your task management. Achieve your goal, one task <br/> at a time. Grab your download and get started.
+            Achieve your goal, one task at a time. <br/> Grab your download and get started.
           </p>
           <Link to="/sign-up"><button type="submit" className="item-container-1">Sign Up</button></Link>
         </div>
       </div>
 
       <div className="footer">
-        <nav>
-          <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
-          <ul>
-            <li className='footer-text'>Design and Development by <a href='https://alex-portfolio-mu.vercel.app/' className='alex'>Alex Udeogu</a> - Copyright 2024</li>
+        <nav className='footer-nav'> 
+           <ul>
+            <li className='footer-text'>Design and  Development by <a href='https://alex-portfolio-mu.vercel.app/' className='alex'>Alex Udeogu</a> - Copyright 2024</li>
           </ul>
         </nav>
       </div>

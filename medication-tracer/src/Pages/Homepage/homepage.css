@@ -8,11 +8,6 @@
   --highlight-color: #0F2B2D; /* Darker color for highlighting */
 }
 
-
-
-
-
-
 .body-x {
   overflow: auto;
   flex-direction: column;
@@ -20,15 +15,13 @@
 
 .navbar-x {
   position: fixed;
-  top: 0;
-  left: 0;  /* Add left: 0 to ensure it's positioned at the left edge */
+  top: 0;  left: 0;  /* Add left: 0 to ensure it's positioned at the left edge */
   width: 100%;
   z-index: 1000;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
 }
-
 
 .nav-x ul {
   padding-right: 3%;
@@ -81,7 +74,7 @@
 }
 
 .intro {
-  padding: 190px;
+  padding: 150px;
   display: grid;
   place-items: center;
   background-color: #ffffff;
@@ -91,9 +84,9 @@
 }
 
 .intro-text-para-1 {
-  width: 42vw;
   color: #1C3A3E;
-  white-space: normal; /* Allow text to wrap */
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .intro-text {
@@ -103,7 +96,6 @@
   line-height: 75px;
   white-space: nowrap;    
 }
-
 
 .highlight {
   color: var(--highlight-color);
@@ -173,21 +165,18 @@
 }
 
 .mission-card-wide {
-  width: 203%; /* Adjust width as needed */
-  padding: 40px;
-  font-size: 15px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: #0F2B2D;
-  outline: 2px solid;    
-  border-radius: 10px;
-  background-color: white;
-  color: #0F2B2D;
-  letter-spacing: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 90px;
   text-align: center;
+  border: #0F2B2D;
+  background-color: white;
+  outline: 2px solid;
+  border-radius: 10px;
+  color: #0F2B2D;
+  letter-spacing: -0px;
+  font-size: 15px;
 }
 
 .works {
@@ -202,9 +191,9 @@
   width: 55%;
   height: auto;
   margin: 10px;
-  padding-top: 40px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-top: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
   border-radius: 15px;
   color: #0F2B2D;
   letter-spacing: 0px;
@@ -218,24 +207,29 @@
 }
 
 .work-image {
-  width: 30%;
-  position: relative;
-  height: 30%;
+  width: 45%;
+  height: 40%;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  margin-left: 20px;
+  margin-left: 30px;
   box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.050), 10px -10px 20px rgba(0, 0, 0, 0.050), 0 10px 20px rgba(0, 0, 0, 0.0000001); /* Add left, top, and right shadow */
 }
 
-
 .text-content-header {
   font-family: 'Playfair Display', serif;
-  letter-spacing: -1px;
-  font-size: 45px;
+  letter-spacing: 0px;
+  font-size: 35px;
+  white-space: nowrap;
   padding-bottom: 10px;
-  line-height: 50px;
+  line-height: 40px;
+}
+
+.text-content-para {
+  white-space: nowrap;
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 .work-header {
@@ -258,15 +252,15 @@
   color: #0F2B2D;
 }
 
-.work-header-para{
-text-align: center;  
-font-size: 120%;
-
-color: #1C3A3E;
+.work-header-para {
+  text-align: center;  
+  font-size: 120%;
+  color: #1C3A3E;
 }
 
-.faq{
+.faq {
   padding-top: 3%;
+  margin-top: 200px; 
 }
 
 
@@ -279,7 +273,6 @@ color: #1C3A3E;
   padding-top: 8%;
 }
 
-
 .faq-header-text {
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -290,14 +283,17 @@ color: #1C3A3E;
 
 .download {
   margin-top: 50px;
+  margin-bottom: 50px;
   background-color: #E3F2F9;
   display: grid;
   place-items: center; /* Center both horizontally and vertically */
-  height: 40vh;
+  height: 30vh;
   align-items: center;
   text-align: center;
-  padding-bottom: 30px;
 }
+
+
+
 
 .download-header-text {
   font-family: 'Playfair Display', serif;
@@ -314,6 +310,12 @@ color: #1C3A3E;
   color: #0F2B2D;
   font-size: 15px;
 }
+
+.footer-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 .alex {
   color: #555555;
@@ -344,5 +346,313 @@ color: #1C3A3E;
   transition: color 1s ease;
 }
 
+/* Media queries */
+@media only screen and (max-width: 1000px) {
+  .item-container-2 {
+    display: none;
+  }
 
 
+  .faq {
+    padding-top: 3%;
+    margin-top: 50%; 
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+.intro-text {
+  font-size: 300%;
+  line-height: 50px;
+}
+.intro-description{
+  font-size: 40px;
+}
+
+.work-header-text{
+  font-size: 40px;
+  line-height: 40px;
+  padding-bottom: 5px;
+
+}
+
+.work-header-para{
+  font-size: 90%;
+}
+
+.work-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.work-image{
+  width: 70%;
+  height: 30%;
+  margin-left: 0;
+  margin-top: 20px;
+}
+.text-content-para{
+  font-size: 10px;
+}
+
+.text-content-header {
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.faq-header-text{
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.download-header-text{
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.download-para-text{
+  font-size: 90%;
+}
+
+
+
+.faq{
+  margin-top: 60%;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-1{
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .item-container-1{
+    padding: 4px 20px;
+  }
+
+  .intro-text{
+    font-size: 200%;
+    line-height: 35px;
+  }
+  
+  .intro-text-para-1{
+    font-size: 15px;
+  }
+
+  .intro-description{
+    font-size: 200%;
+    line-height: 40px;
+  }
+
+  .cards{
+    margin: 20px;
+  }
+  .card-head{
+    font-size: 170%;
+  }
+  .card-text{
+    font-size: 15px;
+  }
+
+  .work-1{
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .work-header-text{
+    font-size: 200%;
+    line-height: 30px;
+  }
+
+  .work-header-para{
+    font-size: 15px;
+  }
+
+  .faq-header-text{
+    font-size: 200%;
+    margin-top: 40px;
+    line-height: 30px;
+
+  }
+
+  .text-content-para{
+    font-size: 15px;
+    white-space: normal;
+  }
+  .text-content-header{
+    font-size: 180%;
+    line-height: 30px;
+  }
+  .download-header-text{
+    font-size: 200%;
+    line-height: 30px;
+  }
+  .download-para-text{
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .Vision{
+    margin: 0;
+  }
+
+  .faq{
+    margin-top: 85%;
+  }
+  .faq-header{
+    margin: 20px;
+  }
+
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 410px){
+  .navbar-x {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .navbar-x .logo-1 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .navbar-x ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar-x ul li {
+    margin: 0 5px;
+  }
+
+  .navbar-x .item-container-1 {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+
+  .intro-text{
+    font-size: 160%;
+    line-height: 28px;
+  }
+
+  .intro-text-para-1 {
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+  .intro-description{
+    font-size: 170%;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+
+  .cards{
+    margin: 20px;
+  }
+  .card-head{
+    font-size: 170%;
+  }
+  .card-text{
+    font-size: 13px;
+  }
+
+  .work-header-text{
+    font-size: 160%;
+    line-height: 25px;
+    }
+
+  .work-header-para{
+    font-size: 13px; 
+    line-height: 15px;
+  }  
+
+  .work-1{
+    margin: 10px;
+  }
+
+  .text-content-header{
+    font-size: 150%;
+    line-height: 25px;
+  }
+  .text-content-para{
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+  .faq{
+    margin-top: 60%;
+  }
+
+  .faq-header-text{
+    font-size: 150%;
+    line-height: 25px;
+  }
+  .download-header-text{
+    font-size: 150%;
+    line-height: 25px;
+  }
+
+  .download-para-text{
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+  .download-text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .item-container-1{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+
+  .footer-text{
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+}
+
+
+/* Responsive font sizes for <a> elements */
+.nav-x ul li a {
+  font-size: 4vw; /* Base size for large screens */
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-x ul li a {
+    font-size: 3vw; /* Adjust font size for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .nav-x ul li a {
+    font-size: 2.5vw; /* Further reduce font size for very small screens */
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .nav-x ul li a {
+    font-size: 2vw; /* Further reduce font size for very small screens */
+  }
+}
