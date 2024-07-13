@@ -8,24 +8,22 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   const navigate = useNavigate();
   const initialPrescriptionTimes = ['12:00'];
   const [prescriptionName, setPrescriptionName] = useState('');
-  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes); // Initial state with one time input
+  const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes);
 
   const handleAddReminder = (e) => {
     e.preventDefault();
     const newReminder = {
       prescriptionName,
       prescriptionTimes,
-      startDate: new Date().toISOString(), // Example start date
-      endDate: null, // Example end date
+      startDate: new Date().toISOString(),
+      endDate: null,
     };
 
     onAddReminder(newReminder);
 
-    // Update local storage
     localStorage.setItem('prescriptionName', prescriptionName);
     localStorage.setItem('reminderTimes', JSON.stringify(prescriptionTimes));
 
-    // Reset form fields
     setPrescriptionName('');
     setPrescriptionTimes(initialPrescriptionTimes);
 

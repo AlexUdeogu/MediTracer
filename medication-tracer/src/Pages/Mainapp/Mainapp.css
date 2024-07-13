@@ -1,16 +1,30 @@
-:root {
-  --background: #d0ebf8;
-  --text: #1C3A3E;
-  --input-background: #FFFFFF;
-  --button-background: #01796F;
-  --button-text: #FFFFFF;
-  --heading-font: 'Playfair Display', serif;
-  --body-font: 'Alegreya', serif;
+/* Mainapp overlay .css */
+
+.mainapp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.288);
+  z-index: 1000;
 }
 
-body {
-  margin: 0;
-  font-family: var(--body-font);
+
+
+.mainapp-overlay.show {
+  display: flex;
+}
+
+.mainapp-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Default width */
 }
 
 .login-page {
@@ -31,8 +45,8 @@ body {
   padding: 20px;
 }
 
-.title-top{
-  margin-top: 5px;	
+.title-top {
+  margin-top: 5px;
   margin-bottom: 30px;
 }
 
@@ -41,7 +55,8 @@ body {
   text-align: center;
   font-size: 60px;
 }
-.login-description{
+
+.login-description {
   margin: 0;
   justify-content: center;
   text-align: center;
@@ -51,7 +66,15 @@ body {
   width: 100%;
 }
 
+.name-fields,
+.user-fields {
+  display: flex;
+  flex-wrap: wrap; /* Allow fields to wrap */
+  justify-content: space-between;
+}
+
 .login-form-group {
+  flex: 1;
   margin-bottom: 0.8rem;
   margin-left: 2%;
 }
@@ -65,17 +88,7 @@ body {
 }
 
 .login-form-input {
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 0.5px solid #949494;
-  background: var(--input-background);
-  color: var(--text);
-}
-
-.login-form-input-d {
   width: 100%;
-  height: 90px;
   padding: 0.5rem;
   border-radius: 6px;
   border: 0.5px solid #949494;
@@ -93,249 +106,18 @@ body {
   color: var(--text);
 }
 
-.login-form-input-date {  
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 0.5px solid #949494;
-  background: var(--input-background);
-  color: var(--text);
-}
-
-
-::placeholder {
-  color: rgb(153, 153, 153); 
-}
-
-#email::placeholder {
-  color: rgb(153, 153, 153);
-}
-
-#password::placeholder {
-  color: rgb(153, 153, 153); 
-}
-
-.forgotpassword {
-  text-align: center;
-  margin-top: 1rem; 
-}
-
-.forgotpassword a {
-  color: #1C3A3E;
-  text-decoration: none;
-}
-
-.forgotpassword a:hover {
-  text-decoration: underline;
-}
-
-.item-container {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: none;
-  background: #0F2B2D;
-  color: white;
-  font-size: 15px;
-  transition: background-color 0.3s ease;
-}
-
-.item-container:hover {
-  background: #000000;
-}
-
-nav {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  background-color: rgba(128, 128, 128, 0.15); 
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(128, 128, 128, 0.15);
-}
-
-nav ul {
-  padding-right: 5%;
-}
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 10px 15px;
-  font-size: 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #1C3A3E;
-}
-
-.logo {
-  padding: 10px;
-  margin-left: 40px;
-  font-size: 30px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  color: #1C3A3E;
-}
-
-/* Mainapp overlay .css */
-
 .button-container {
   display: flex;
-  gap: 120px; /* Adjust the gap as needed */
-}
-
-.close-button {
-  width: 30%;
-  margin-top: 10px;
-  padding: 0.75rem;
-  border-radius: 6px;
-  white-space: nowrap;
-  border: none;
-  background: #d9534f; /* Red color for delete button */
-  color: var(--button-text);
-  font-size: 17px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-items: center;
-  text-align: center; 
-}
-
-.close-button:hover {
-  background: #c9302c; /* Darker red on hover */
-}
-
-.mainapp-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.288);
-  z-index: 1000;
-}
-
-.mainapp-overlay.show {
-  display: flex;
-}
-
-.mainapp-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 50%;
-}
-
-.name-fields, .user-fields {
-  display: flex;
-  justify-content: space-between;
-}
-
-.name-fields .login-form-group,
-.user-fields .login-form-group {
-  flex: 1;
-  margin-right: 10px; /* Adjust as needed */
-}
-
-.name-fields .login-form-group:last-child,
-.user-fields .login-form-group:last-child {
-  margin-right: 0;
-}
-
-.login-form-input {
-  width: 100%; /* Adjust width to fit within the flexbox layout */
-}
-
-/* Custom styles for react-datepicker */
-.react-datepicker {
-  font-family: var(--body-font);
-}
-
-.react-datepicker__header {
-  background-color: white;
-  border-bottom: 0px solid #0F2B2D;
-}
-
-.react-datepicker__current-month,
-.react-datepicker-time__header,
-.react-datepicker-year-header {
-  color: var(--text);
-  font-weight: bold;
-}
-
-.react-datepicker__day,
-.react-datepicker__day-name,
-.react-datepicker__time-name {
-  color: #1C3A3E;
-}
-
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: #cacaca;
-  color: var(--button-text);
-}
-
-.react-datepicker__day--today {
-  font-weight: bold;
-  color: #1C3A3E;
-}
-
-.react-datepicker__navigation--previous,
-.react-datepicker__navigation--next {
-  border-color: #1C3A3E;
-}
-
-.react-datepicker__navigation--previous:hover,
-.react-datepicker__navigation--next:hover {
-  border-color: #1C3A3E;
-}
-
-/* Custom styles for react-time-picker */
-.react-time-picker__wrapper {
-  border: none; /* Remove border */
-  box-shadow: none; /* Remove any box shadow */
-}
-
-.react-time-picker__inputGroup__input {
-  border: none; /* Remove input border */
-  outline: none; /* Remove default outline */
-  color: var(--text); /* Match text color */
-  background-color: var(--input-background); /* Match background color */
-}
-
-.react-time-picker__inputGroup__leadingZero {
-  color: var(--text); /* Match text color */
-}
-
-.react-time-picker__inputGroup__divider {
-  color: var(--text); /* Match text color */
-}
-
-.react-time-picker__inputGroup {
-  color: var(--text); /* Match text color */
-}
-
-
-.button-container {
-  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
   justify-content: space-between; /* Adjust as needed */
   gap: 10px; /* Adjust the gap between buttons */
 }
 
 .login-form-button,
 .close-button,
-.add-time-button {
-  flex: 0.5; /* Equal width for all buttons */
+.add-time-button,
+.remove-time {
+  flex-basis: calc(33% - 10px); /* Set flex-basis to a percentage minus gap */
   margin-top: 10px;
   padding: 0.5rem;
   border-radius: 6px;
@@ -354,31 +136,15 @@ nav ul li a {
   text-align: center;
 }
 
-.login-form-button:hover,
-.close-button:hover,
-.add-time-button:hover {
-  background: #000000; /* Darker background on hover */
-}
+@media (max-width: 768px) {
+  .mainapp-content {
+    width: 80%; /* Adjust width for smaller screens */
+  }
 
-.remove-time{
-  height: 30px; /* Reduced button height */
-  padding: 5px 10px;
-  border-radius: 6px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d9534f;
-  background: #ffffff; /* Red color for delete button */
-  color: #d9534f;
-  font-size: 13px; /* Reduced font size */
-  display: inline-flex; /* Allows vertical centering */
-  align-items: center; /* Centers text vertically */
-  justify-content: end; /* Centers text horizontally */
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-  margin: 5px; /* Add some space between buttons */
-}
-
-.remove-time:hover {
-  background: #c9302c; 
-  color: #ffffff;/* Darker red on hover */
+  .login-form-button,
+  .close-button,
+  .add-time-button,
+  .remove-time {
+    flex-basis: calc(50% - 10px); /* Adjust for smaller screens */
+  }
 }

@@ -42,7 +42,6 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
           <button type="button" className="item-container-main" onClick={toggleMainApp}>Add Drug</button>
           <li><a href="#service">{user ? user.username : 'JohnDoe123'}</a></li>
           <li><Link to="/"><a href="#service">Log Out</a></Link></li>
-          <li><a href="#"><button type="submit" className="item-container"> {user ? user.firstName[0] + user.lastName[0] : 'JD'} </button></a></li>
         </ul>
       </nav>
       <div className="mainpage">
