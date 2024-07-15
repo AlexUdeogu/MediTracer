@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import './Mainapp.css';
 
 const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   const navigate = useNavigate();
-  const initialPrescriptionTimes = ['12:00'];
+  const initialPrescriptionTimes = [];
   const [prescriptionName, setPrescriptionName] = useState('');
   const [prescriptionTimes, setPrescriptionTimes] = useState(initialPrescriptionTimes);
 
@@ -38,7 +36,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
   };
 
   const handleAddTime = () => {
-    setPrescriptionTimes([...prescriptionTimes, '12:00']);
+    setPrescriptionTimes([...prescriptionTimes, '']);
   };
 
   const handleTimeChange = (index, newTime) => {
@@ -63,7 +61,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
             <form className="login-form" onSubmit={handleAddReminder}>
               <div className="title-top">
                 <h2 className="login-title">Medication</h2>
-                <p className='login-description'>
+                <p className="login-description">
                   Add a reminder to make sure you don't miss your medication.
                 </p>
               </div>
@@ -85,16 +83,21 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
               {prescriptionTimes.map((time, index) => (
                 <div className="login-form-group" key={index}>
                   <label className="login-form-label">Reminder Time:</label>
-                  <TimePicker
+                  <input
+                    type="time"
                     value={time}
-                    onChange={(newTime) => handleTimeChange(index, newTime)}
-                    disableClock={true}
+                    onChange={(e) => handleTimeChange(index, e.target.value)}
                     className="login-form-input-time"
-                    clearIcon={null}
-                    clockIcon={null}
+                    required
                   />
                   {index > 0 && (
-                    <button type="button" className='remove-time' onClick={() => handleDeleteTime(index)}>Remove</button>
+                    <button
+                      type="button"
+                      className="remove-time"
+                      onClick={() => handleDeleteTime(index)}
+                    >
+                      Remove
+                    </button>
                   )}
                 </div>
               ))}
