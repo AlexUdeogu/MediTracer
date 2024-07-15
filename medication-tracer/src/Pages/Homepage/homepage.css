@@ -65,6 +65,7 @@
   border: none;
   background: #1C3A3E;
   color: var(--button-text);
+  font-weight: 500;
   font-size: 17px;
   transition: background-color 0.3s ease;
 }
@@ -74,7 +75,8 @@
 }
 
 .intro {
-  padding: 150px;
+  padding: 160px;
+  padding-top: 190px;
   display: grid;
   place-items: center;
   background-color: #ffffff;
@@ -82,6 +84,9 @@
   align-items: center;
   text-align: center;
 }
+
+
+
 
 .intro-text-para-1 {
   color: #1C3A3E;
@@ -260,7 +265,7 @@
 
 .faq {
   padding-top: 3%;
-  margin-top: 200px; 
+  margin-top: 15%; 
 }
 
 
@@ -283,7 +288,7 @@
 
 .download {
   margin-top: 50px;
-  margin-bottom: 50px;
+  padding-bottom: 20px;
   background-color: #E3F2F9;
   display: grid;
   place-items: center; /* Center both horizontally and vertically */
@@ -291,6 +296,7 @@
   align-items: center;
   text-align: center;
 }
+
 
 
 
@@ -355,13 +361,18 @@
 
   .faq {
     padding-top: 3%;
-    margin-top: 50%; 
   }
 
   .cards {
     grid-template-columns: 1fr;
     padding: 0 5%;
   }
+
+  .Vision{
+    padding-bottom: 60px;
+  }
+
+  
 
 }
 
@@ -395,6 +406,10 @@
   padding-right: 0;
 }
 
+.Vision{
+  padding-bottom: 60px;
+}
+
 .work-image{
   width: 70%;
   height: 30%;
@@ -426,8 +441,12 @@
 
 
 
-.faq{
-  margin-top: 60%;
+
+
+.item-container-1{
+  padding: 8px 20px;
+  font-weight: 500;
+
 }
 
 }
@@ -440,6 +459,8 @@
 
   .item-container-1{
     padding: 4px 20px;
+    font-weight: 600;
+
   }
 
   .intro-text{
@@ -505,11 +526,11 @@
   }
 
   .Vision{
-    margin: 0;
-  }
+    padding-bottom: 60px;
+    }
 
   .faq{
-    margin-top: 85%;
+    margin-top: 45%;
   }
   .faq-header{
     margin: 20px;
@@ -518,7 +539,7 @@
 }
 
 
-@media screen and (min-width: 300px) and (max-width: 410px){
+@media screen and (min-width: 330px) and (max-width: 410px){
   .navbar-x {
     display: flex;
     justify-content: space-between;
@@ -545,6 +566,7 @@
   .navbar-x .item-container-1 {
     padding: 8px 10px;
     font-size: 14px;
+    font-weight: 500;
   }
 
 
@@ -554,7 +576,7 @@
   }
 
   .intro-text-para-1 {
-    font-size: 13px; 
+    font-size: 12.5px; 
     line-height: 15px;
   }
 
@@ -562,6 +584,10 @@
     font-size: 170%;
     line-height: 25px;
     padding-bottom: 10px;
+  }
+
+  .Vision{
+    padding-bottom: 60px;
   }
 
   .cards{
@@ -598,7 +624,7 @@
   }
 
   .faq{
-    margin-top: 60%;
+    margin-top: 50%;
   }
 
   .faq-header-text{
@@ -631,6 +657,126 @@
     line-height: 15px;
   }
 
+}
+
+@media  (max-width: 320px) {
+
+  .navbar-x {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .navbar-x .logo-1 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .navbar-x ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar-x ul li {
+    margin: 0 5px;
+  }
+
+  .navbar-x .item-container-1 {
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+
+  .intro-text{
+    font-size: 160%;
+    line-height: 28px;
+  }
+
+  .intro-text-para-1 {
+    font-size: 12.5px; 
+    line-height: 15px;
+  }
+
+  .intro-description{
+    font-size: 170%;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+
+  .Vision{
+    padding-bottom: 60px;
+  }
+
+  .cards{
+    margin: 20px;
+  }
+  .card-head{
+    font-size: 170%;
+  }
+  .card-text{
+    font-size: 13px;
+  }
+
+  .work-header-text{
+    font-size: 160%;
+    line-height: 25px;
+    }
+
+  .work-header-para{
+    font-size: 13px; 
+    line-height: 15px;
+  }  
+
+  .work-1{
+    margin: 10px;
+  }
+
+  .text-content-header{
+    font-size: 150%;
+    line-height: 25px;
+  }
+  .text-content-para{
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+  .faq{
+    margin-top: 70%;
+  }
+
+  .faq-header-text{
+    font-size: 150%;
+    line-height: 25px;
+  }
+  .download-header-text{
+    font-size: 150%;
+    line-height: 25px;
+  }
+
+  .download-para-text{
+    font-size: 13px; 
+    line-height: 15px;
+  }
+
+  .download-text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .item-container-1{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+
+  .footer-text{
+    font-size: 13px; 
+    line-height: 15px;
+  }
 }
 
 

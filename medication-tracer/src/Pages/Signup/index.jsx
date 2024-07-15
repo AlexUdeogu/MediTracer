@@ -21,7 +21,7 @@ const Signup = () => {
   return (
     <div>
       <nav className='nav-3'>
-        <Link to="/" className='logo-0'> Medi<span className='logo-half'>Tracer</span></Link>
+        <Link to="/" className='logo-0'> Medi<span className='logo-half'>Guide</span></Link>
         <ul>
           <li><Link to="/log-in"><botton type="submit" className="item-container-2-0">Log In</botton></Link></li>
         </ul>

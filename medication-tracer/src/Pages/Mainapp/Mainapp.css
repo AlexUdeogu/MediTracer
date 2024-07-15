@@ -11,6 +11,7 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.288);
   z-index: 1000;
+  overflow:scroll;
 }
 
 
@@ -136,6 +137,18 @@
   text-align: center;
 }
 
+.remove-time{
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9534f;
+  background: #ffffff; /* Red color for delete button */
+  color: #d9534f;}
+
+.remove-time:hover{
+  background: #c9302c; 
+  color: #ffffff;}
+
 @media (max-width: 768px) {
   .mainapp-content {
     width: 80%; /* Adjust width for smaller screens */
@@ -146,5 +159,20 @@
   .add-time-button,
   .remove-time {
     flex-basis: calc(50% - 10px); /* Adjust for smaller screens */
+  }
+
+  .login-title{
+    font-size: 50px;
+  }
+
+  @media (max-width:420px) {
+
+  .login-title{
+    font-size: 35px;
+  }
+
+  .login-description{
+    font-size: 13px;
+  }
   }
 }

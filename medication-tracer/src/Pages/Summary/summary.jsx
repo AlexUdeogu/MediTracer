@@ -50,6 +50,8 @@ const Summary = ({ reminder, onDeleteReminder }) => {
           <p><span className='info-title'>Recall enforcement reports:</span> {recallReports ? truncateArray(recallReports.map(report => report.reason_for_recall), recallReports.length).join(', ') : 'Information not available'}</p>
           <p><span className='info-title'>NDC Directory:</span> {ndcDirectory?.product_ndc || 'Information not available'}</p>
           <p><span className='info-title'>Drugs@FDA:</span> {drugsAtFda?.application_number || 'Information not available'}</p>
+          <p className='footer-text-2'> FDA data provided.</p>
+
         </div>
       </motion.div>
       {loading && <p className="loading-text" style={{ color: '#1C3A3E' }}>Loading...</p>}

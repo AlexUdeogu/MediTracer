@@ -39,6 +39,7 @@ nav {
 .mainpage {
     display: flex;
     margin-bottom: 5%;
+    padding-top: 75px;
     flex-direction: column;
     align-items: center;
     color: #1C3A3E;
@@ -90,18 +91,20 @@ p {
 
 .item-container-main {
     white-space: nowrap;
-    margin: 20px;
+    margin: 10px;
     font-weight: 500;
     border-radius: 6px;
     border: none;
-    color:  #152d30;
+    color:  #ffffff;
+    padding: 8px 20px;
+    background-color: #152d30;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .item-container-main:hover {
-    color: #0b1618;
+    background-color: #0b1618;
 }
 
 .item-container-main-2 {
@@ -143,23 +146,39 @@ p {
     color: #ffffff;/* Darker red on hover */
 }
 
-.footer-space {
-    padding: 7%;
+
+
+@media (max-width: 585px) {
+    .logo{
+        font-size: 20px;
+        margin-left: 10px;
+      }
 }
 
-.footer-2 {
-    height: 3.5rem;
-    padding-right: 30px;
-    width: 30vw;  /* Adjust as needed for desired width */
-    flex-direction: column;
-    font-size: 15px;
-    align-items: flex-start;
-    text-align: left;
-    position: fixed;
-    color: #7c7c7ce1;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
-    white-space: nowrap;
-  }
-  
+@media (max-width: 370px) {
+
+    .logo{
+        font-size: 18.5px;
+        margin-left: 10px;
+      }
+
+    nav ul{
+        padding-right: 0;
+    }
+    nav ul li a{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .logo{
+        font-size: 17px;
+        margin-left: 10px;
+      }
+
+    nav ul li a{
+        font-size: 12px;
+    }
+    
+}

@@ -36,10 +36,9 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
 
   return (
     <div className='body-page'>
-      <nav>
+      <nav className='nav-10'>
         <a href='#' className='logo'> Medi<span className='logo-half'>Guide</span></a>
         <ul>
-          <button type="button" className="item-container-main" onClick={toggleMainApp}>Add Drug</button>
           <li><a href="#service">{user ? user.username : 'JohnDoe123'}</a></li>
           <li><Link to="/"><a href="#service">Log Out</a></Link></li>
         </ul>
@@ -47,7 +46,8 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
       <div className="mainpage">
         <div className="mainpage-title">
           <h1 className='mainpage-head'>Medications</h1>
-          <p>Manage your reminders and view their health performance.</p>
+          <p>Manage your Medications and stay informed about them.</p>
+          <button type="button" className="item-container-main" onClick={toggleMainApp}> Add Medication </button>
         </div>
       </div>
 
@@ -62,10 +62,6 @@ const Medpage = ({ toggleMainApp, showMainApp }) => {
       </div>
 
       <Mainapp toggleMainApp={toggleMainApp} showMainApp={showMainApp} onAddReminder={addReminder} />
-
-      <div className="footer-2">
-        <p className='footer-text-2'> FDA data provided on potential side effects.</p>
-      </div>
     </div>
   );
 };

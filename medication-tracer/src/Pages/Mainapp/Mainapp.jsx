@@ -62,7 +62,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
           <div className="login-container">
             <form className="login-form" onSubmit={handleAddReminder}>
               <div className="title-top">
-                <h2 className="login-title">Reminder</h2>
+                <h2 className="login-title">Medication</h2>
                 <p className='login-description'>
                   Add a reminder to make sure you don't miss your medication.
                 </p>

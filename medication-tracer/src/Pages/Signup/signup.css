@@ -25,6 +25,7 @@
   padding: 1rem;
   width: 50%; 
   height: 100%;
+
 }
 
 .login-title-0 {
@@ -187,6 +188,7 @@
 
   .login-form-0 {
     padding-top: 160px;
+    
   }
 
 }
@@ -208,7 +210,9 @@
   .login-container-0 {
     background: var(--input-background);
     padding: 2rem;
-    width: 55%;
+    width: 80%; 
+    border: #0F2B2D;
+    outline: 2px solid;
     height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */
@@ -218,6 +222,7 @@
 
   .login-form-0{
     padding-top: 0;
+    
   }
 
   .cutout-container-0{
@@ -242,8 +247,9 @@
   .login-container-0 {
     background: var(--input-background);
     padding: 2rem;
-    width: 60%;
-    height: auto; /* Adjust height as necessary */
+    width: 80%; 
+    border: #0F2B2D;
+    outline: 2px solid;    height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */
   }
@@ -278,6 +284,8 @@
     padding: 1rem;
     margin-top: 50px;
     width: 70%;
+    border: #0F2B2D;
+    outline: 2px solid;
     height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */

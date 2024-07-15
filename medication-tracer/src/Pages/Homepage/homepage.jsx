@@ -68,17 +68,22 @@ const Homepage = () => {
         <ul>
           <li><a href="#objectives" className="item-container-2" onClick={handleScrollToObjectives}>About</a></li>
           <li><a href="#works" className="item-container-2" onClick={handleScrollToWorks}>How it works</a></li> 
-          <li><a href="#faqs" className="item-container-2" onClick={handleScrollToFAQs}>FAQs</a></li> {/* Updated link */}
+          <li><a href="#faqs" className="item-container-2" onClick={handleScrollToFAQs}>FAQs</a></li>
           <li><Link to="/sign-up"><a href="#account" className="item-container-2">Don't have an account?</a></Link></li>
           <li><Link to="/log-in"><botton type="submit" className="item-container-1">Log In</botton></Link></li>
         </ul>
       </nav>
+
+
+
+
       <div className='intro'>
         <h1 className='intro-text'>Get ready to <span className="highlight">supercharge</span>  <br/> your health and planning<br/>like never before.</h1>
         <p className='intro-text-para-1'>
-          Be on top of your health game <br/> with  our cutting edge software.
+          Be on top of your health game with our cutting edge software.
         </p>
       </div>
+      
       <div className='Vision' id="objectives" ref={objectivesRef}>
         <h1 className='intro-description' ref={introDescriptionRef}>MediGuide's Objectives</h1>
         <div className="cards">

@@ -28,7 +28,7 @@
 
 .drug {
     font-family: "Playfair Display", serif;
-    font-size: 440%;
+    font-size: 60px;
     color: #1C3A3E;
     line-height: 75px;
     text-align: center;
@@ -64,4 +64,35 @@
 
 .close-btn:hover {
     color: #ff3d3d;
+}
+
+.footer-text-2{
+    color: #7c7c7c8c;
+    font-size: 10px;
+}
+
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .summary-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+}
+
+@media (max-width: 430px) and (min-width: 320px){
+.summary-grid{
+    padding: 10px;
+}
+
+.med-summary{
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+
+
 }

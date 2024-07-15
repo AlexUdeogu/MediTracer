@@ -34,8 +34,9 @@
 
 .login-title-1 {
   font-family: var(--heading-font);
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
+  padding-left: 5%;
   font-size: 60px;
 }
 
@@ -213,7 +214,9 @@
   .login-container-1 {
     background: var(--input-background);
     padding: 2rem;
-    width: 55%;
+    width: 90%;
+    border: #0F2B2D;
+    outline: 2px solid;
     height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */
@@ -247,7 +250,9 @@
   .login-container-1 {
     background: var(--input-background);
     padding: 2rem;
-    width: 60%;
+    width: 90%;
+    border: #0F2B2D;
+    outline: 2px solid;
     height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */
@@ -285,7 +290,9 @@
   .login-container-1 {
     background: var(--input-background);
     padding: 1rem;
-    width: 70%;
+    width: 80%; 
+    border: #0F2B2D;
+    outline: 2px solid;
     height: auto; /* Adjust height as necessary */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger and more prominent shadow */
     border-radius: 13px; /* Rounded corners */
@@ -307,6 +314,7 @@
   .login-form-label-1{
     font-size: 13px;
   }
+  
 
 
 
