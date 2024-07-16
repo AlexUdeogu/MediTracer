@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import './summary.css';
-import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   useFetchSideEffects,
   useFetchRecallReports,
@@ -8,6 +8,7 @@ import {
   useFetchNdcDirectory,
   useFetchDrugsAtFda
 } from '../../Api/useFetchSideEffects.jsx';
+import { motion } from 'framer-motion';
 
 const Summary = ({ reminder, onDeleteReminder }) => {
   const drugName = reminder.prescriptionName;
@@ -15,24 +16,11 @@ const Summary = ({ reminder, onDeleteReminder }) => {
 
   const [loading, setLoading] = useState(true);
 
-  // Memoized fetch functions
-  const sideEffectsFetch = useFetchSideEffects(drugName);
-  const recallReportsFetch = useFetchRecallReports(drugName);
-  const productLabelingFetch = useFetchProductLabeling(drugName);
-  const ndcDirectoryFetch = useFetchNdcDirectory(drugName);
-  const drugsAtFdaFetch = useFetchDrugsAtFda(drugName);
-
-  const sideEffects = sideEffectsFetch.data;
-  const recallReports = recallReportsFetch.data;
-  const productLabeling = productLabelingFetch.data;
-  const ndcDirectory = ndcDirectoryFetch.data;
-  const drugsAtFda = drugsAtFdaFetch.data;
-
-  const sideEffectsLoading = sideEffectsFetch.isLoading;
-  const recallReportsLoading = recallReportsFetch.isLoading;
-  const productLabelingLoading = productLabelingFetch.isLoading;
-  const ndcDirectoryLoading = ndcDirectoryFetch.isLoading;
-  const drugsAtFdaLoading = drugsAtFdaFetch.isLoading;
+  const { data: sideEffects, isLoading: sideEffectsLoading } = useFetchSideEffects(drugName);
+  const { data: recallReports, isLoading: recallReportsLoading } = useFetchRecallReports(drugName);
+  const { data: productLabeling, isLoading: productLabelingLoading } = useFetchProductLabeling(drugName);
+  const { data: ndcDirectory, isLoading: ndcDirectoryLoading } = useFetchNdcDirectory(drugName);
+  const { data: drugsAtFda, isLoading: drugsAtFdaLoading } = useFetchDrugsAtFda(drugName);
 
   useEffect(() => {
     if (!sideEffectsLoading && !recallReportsLoading && !productLabelingLoading && !ndcDirectoryLoading && !drugsAtFdaLoading) {
@@ -55,20 +43,15 @@ const Summary = ({ reminder, onDeleteReminder }) => {
           <h1 className='drug'>{drugName}</h1>
         </div>
         <div className="drug-info">
-          {loading ? (
-            <p className="loading-text" style={{ color: '#1C3A3E' }}>Loading...</p>
-          ) : (
-            <>
-              <p><span className='info-title'>Reminder Time:</span> {reminderTime || 'Null'}</p>
-              <p><span className='info-title'>Dosage:</span> {productLabeling?.dosage_and_administration || 'Information not available'}</p>
-              <p><span className='info-title'>Adverse Effects:</span> {sideEffects ? truncateArray(sideEffects.map(effect => effect.term), sideEffects.length).join(', ') : 'Information not available'}</p>
-              <p><span className='info-title'>Product labeling:</span> {productLabeling?.indications_and_usage || 'Information not available'}</p>
-              <p><span className='info-title'>Recall enforcement reports:</span> {recallReports ? truncateArray(recallReports.map(report => report.reason_for_recall), recallReports.length).join(', ') : 'Information not available'}</p>
-              <p><span className='info-title'>NDC Directory:</span> {ndcDirectory?.product_ndc || 'Information not available'}</p>
-              <p><span className='info-title'>Drugs@FDA:</span> {drugsAtFda?.application_number || 'Information not available'}</p>
-            </>
-          )}
+          <p><span className='info-title'>Reminder Time:</span> {reminderTime}</p>
+          <p><span className='info-title'>Dosage:</span> {productLabeling?.dosage_and_administration || 'Information not available'}</p>
+          <p><span className='info-title'>Adverse Effects:</span> {sideEffects ? truncateArray(sideEffects.map(effect => effect.term), sideEffects.length).join(', ') : 'Information not available'}</p>
+          <p><span className='info-title'>Product labeling:</span> {productLabeling?.indications_and_usage || 'Information not available'}</p>
+          <p><span className='info-title'>Recall enforcement reports:</span> {recallReports ? truncateArray(recallReports.map(report => report.reason_for_recall), recallReports.length).join(', ') : 'Information not available'}</p>
+          <p><span className='info-title'>NDC Directory:</span> {ndcDirectory?.product_ndc || 'Information not available'}</p>
+          <p><span className='info-title'>Drugs@FDA:</span> {drugsAtFda?.application_number || 'Information not available'}</p>
           <p className='footer-text-2'> FDA data provided.</p>
+
         </div>
       </motion.div>
     </div>
