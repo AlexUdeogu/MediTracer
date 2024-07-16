@@ -86,27 +86,22 @@ export default function CustomizedAccordions() {
     <Container>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          How does the medication reminder feature work?
+          How does this work?
         </AccordionSummary>
         <AccordionDetails>
-          The medication reminder feature allows you to set specific times for taking your medications. You can input the medication name, dosage, daily intake frequency, and the start and end dates for the prescription. When it's time to take your medication, you'll receive a notification. This ensures you never miss a dose and helps you maintain your health regimen effectively.
-        </AccordionDetails>
+        MediGuide provides comprehensive drug and medication information sourced from the FDA. Users can access details such as medication names, dosages, recommended daily intake frequencies, and prescription durations. This platform equips users with essential knowledge to make informed healthcare decisions.       </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          Can I manage multiple medications and health products?
-        </AccordionSummary>
+        Does MediGuide support management of multiple medications and health products?        </AccordionSummary>
         <AccordionDetails>
-          Yes, you can manage multiple medications and health-related products using our app. Each medication can have its own set of reminders, and you can track different health products as well. The app allows you to input detailed information for each item, including dosage, intake frequency, and duration, making it easy to handle all your health needs in one place.
-        </AccordionDetails>
+        Yes, MediGuide enables you to effectively manage multiple medications and health-related products through our app. Each medication can be scheduled with its own reminders, and you can also track various health products seamlessly. Our app allows detailed input for each item, including dosage, intake frequency, and duration, ensuring comprehensive management of your health needs within a single platform.        </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          How do I get notified about my medication times?
-        </AccordionSummary>
+        How does MediGuide notify me about my medication schedule?        </AccordionSummary>
         <AccordionDetails>
-          You will receive notifications via email when it's time to take your medication. The app ensures that these notifications are sent within the start and end dates you specify, and they are timed to match your prescribed schedule. This way, you can be confident that you won't miss any doses and can stay on top of your health routine.
-        </AccordionDetails>
+        The reminder feature is currently under development and will soon be integrated. You will receive push notifications when it's time to take your medication. The app ensures that these notifications are sent within the start and end dates you specify, and they are timed to match your prescribed schedule. This way, you can be confident that you won't miss any doses and can stay on top of your health routine.        </AccordionDetails>
       </Accordion>
     </Container>
   );

@@ -36,7 +36,7 @@ const Signup = () => {
               <input
                 className="login-form-input-0"
                 id="first-name"
-                placeholder="John"
+                placeholder="Chidi"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
@@ -48,7 +48,7 @@ const Signup = () => {
               <input
                 className="login-form-input-0"
                 id="last-name"
-                placeholder="Doe"
+                placeholder="Debo"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
@@ -60,7 +60,7 @@ const Signup = () => {
               <input
                 className="login-form-input-0"
                 id="username"
-                placeholder="@JohnDoe1234"
+                placeholder="ChidiDeboSinto"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -73,7 +73,7 @@ const Signup = () => {
                 type="email"
                 id="email"
                 className="login-form-input-0"
-                placeholder="johndoe@gmail.com"
+                placeholder="DeboSinto999@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

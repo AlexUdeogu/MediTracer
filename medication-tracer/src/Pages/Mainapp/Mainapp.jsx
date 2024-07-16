@@ -62,7 +62,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
               <div className="title-top">
                 <h2 className="login-title">Medication</h2>
                 <p className="login-description">
-                  Add a reminder to make sure you don't miss your medication.
+                Input a drug and get information from trusted sources.
                 </p>
               </div>
 

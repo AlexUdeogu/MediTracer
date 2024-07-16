@@ -30,8 +30,9 @@
 
 .login-title-0 {
   font-family: var(--heading-font);
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
+  margin-left: 6%;
   font-size: 60px;
 }
 
