@@ -28,7 +28,7 @@ const Summary = ({ reminder, onDeleteReminder }) => {
     }
   }, [sideEffectsLoading, recallReportsLoading, productLabelingLoading, ndcDirectoryLoading, drugsAtFdaLoading]);
 
-  const truncateArray = (arr, maxLength) => arr ? arr.slice(0, Math.ceil(maxLength / 3.5)) : [];
+  const truncateArray = (arr, maxLength) => arr ? arr.slice(0, Math.ceil(maxLength / 4)) : [];
 
   return (
     <div className='med-summary'>
