@@ -12,7 +12,8 @@ export default defineConfig({
         '@mui/material/styles',
         '@mui/icons-material/ArrowForwardIosSharp',
         '@mui/material/Accordion',
-        '@mui/material/AccordionSummary', // Add @mui/material/AccordionSummary here
+        '@mui/material/AccordionSummary',
+        '@mui/material/AccordionDetails', // Add @mui/material/AccordionDetails here
       ],
     },
   },
