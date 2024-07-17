@@ -14,7 +14,7 @@ export default defineConfig({
         '@mui/material/Accordion',
         '@mui/material/AccordionSummary',
         '@mui/material/AccordionDetails', // Add @mui/material/AccordionDetails here
-      ],
+      ], 
     },
   },
   server: {
