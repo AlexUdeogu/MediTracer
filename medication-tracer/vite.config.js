@@ -11,7 +11,8 @@ export default defineConfig({
         'axios',
         '@mui/material/styles',
         '@mui/icons-material/ArrowForwardIosSharp',
-        '@mui/material/Accordion', // Add @mui/material/Accordion here
+        '@mui/material/Accordion',
+        '@mui/material/AccordionSummary', // Add @mui/material/AccordionSummary here
       ],
     },
   },
