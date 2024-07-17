@@ -7,7 +7,7 @@ import Homepage from './Pages/Homepage/homepage.jsx';
 import Mainapp from './Pages/Mainapp/Mainapp.jsx';
 import Medpage from './Pages/MedPage/medpage.jsx';
 import Summary from './Pages/Summary/summary.jsx'; 
-import { QueryClient, QueryClientProvider } from 'react-query';
+/*import { QueryClient, QueryClientProvider } from 'react-query';*/
 
 const queryClient = new QueryClient();
 
