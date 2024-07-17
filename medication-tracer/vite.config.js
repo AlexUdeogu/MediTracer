@@ -5,7 +5,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@fortawesome/react-fontawesome', 'framer-motion', 'axios'],
+      external: [
+        '@fortawesome/react-fontawesome',
+        'framer-motion',
+        'axios',
+        '@mui/material/styles', // Add @mui/material/styles here
+      ],
     },
   },
   server: {
