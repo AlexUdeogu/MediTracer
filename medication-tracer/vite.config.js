@@ -10,6 +10,7 @@ export default defineConfig({
         'framer-motion',
         'axios',
         '@mui/material/styles', // Add @mui/material/styles here
+        '@mui/icons-material/ArrowForwardIosSharp', // Add @mui/icons-material/ArrowForwardIosSharp here
       ],
     },
   },
