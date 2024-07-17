@@ -195,7 +195,7 @@
   background-color: #E3F2F9;
   width: 55%;
   height: auto;
-  margin: 10px;
+  margin: 20px;
   padding-top: 50px;
   padding-right: 40px;
   padding-left: 40px;
@@ -214,8 +214,8 @@
 .work-image {
   width: 45%;
   height: 40%;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   margin-left: 30px;
@@ -566,12 +566,12 @@
   .navbar-x .item-container-1 {
     padding: 8px 10px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
   }
 
 
   .intro-text{
-    font-size: 160%;
+    font-size: 175%;
     line-height: 28px;
   }
 
@@ -624,7 +624,7 @@
   }
 
   .faq{
-    margin-top: 50%;
+    margin-top: 60%;
   }
 
   .faq-header-text{
@@ -745,7 +745,7 @@
   }
 
   .faq{
-    margin-top: 70%;
+    margin-top: 75%;
   }
 
   .faq-header-text{

@@ -43,7 +43,7 @@ const Summary = ({ reminder, onDeleteReminder }) => {
           <h1 className='drug'>{drugName}</h1>
         </div>
         <div className="drug-info">
-          <p><span className='info-title'>Reminder Time:</span> {reminderTime}</p>
+          <p><span className='info-title'>Reminder Time:</span> {reminderTime || 'Time not set' }</p>
           <p><span className='info-title'>Dosage:</span> {productLabeling?.dosage_and_administration || 'Information not available'}</p>
           <p><span className='info-title'>Adverse Effects:</span> {sideEffects ? truncateArray(sideEffects.map(effect => effect.term), sideEffects.length).join(', ') : 'Information not available'}</p>
           <p><span className='info-title'>Product labeling:</span> {productLabeling?.indications_and_usage || 'Information not available'}</p>

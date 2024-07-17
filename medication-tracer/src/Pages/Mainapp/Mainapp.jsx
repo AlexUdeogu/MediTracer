@@ -68,7 +68,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
 
               <div className="name-fields">
                 <div className="login-form-group">
-                  <label htmlFor="prescription-name" className="login-form-label">Prescription Name:</label>
+                  <label htmlFor="prescription-name" className="login-form-label">Medication Name:</label>
                   <input
                     className="login-form-input"
                     id="prescription-name"
@@ -103,7 +103,7 @@ const Mainapp = ({ toggleMainApp, showMainApp, onAddReminder }) => {
               ))}
 
               <div className="button-container">
-                <button type="submit" className="login-form-button">Add Reminder</button>
+                <button type="submit" className="login-form-button">Add Medication</button>
                 <button type="button" className="add-time-button" onClick={handleAddTime}>Add Time Slot</button>
                 <button type="button" className="close-button" onClick={handleClose}>Close</button>
               </div>
