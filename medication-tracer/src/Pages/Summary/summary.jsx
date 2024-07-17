@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './summary.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   useFetchSideEffects,
   useFetchRecallReports,
@@ -7,6 +8,7 @@ import {
   useFetchNdcDirectory,
   useFetchDrugsAtFda
 } from '../../Api/useFetchSideEffects.jsx';
+import { motion } from 'framer-motion';
 
 const Summary = ({ reminder, onDeleteReminder }) => {
   const drugName = reminder.prescriptionName;
