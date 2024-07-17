@@ -9,8 +9,9 @@ export default defineConfig({
         '@fortawesome/react-fontawesome',
         'framer-motion',
         'axios',
-        '@mui/material/styles', // Add @mui/material/styles here
-        '@mui/icons-material/ArrowForwardIosSharp', // Add @mui/icons-material/ArrowForwardIosSharp here
+        '@mui/material/styles',
+        '@mui/icons-material/ArrowForwardIosSharp',
+        '@mui/material/Accordion', // Add @mui/material/Accordion here
       ],
     },
   },
