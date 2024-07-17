@@ -9,13 +9,12 @@ export default defineConfig({
         '@fortawesome/react-fontawesome',
         'framer-motion',
         'axios',
-        // Do not externalize MUI components
-        // '@mui/material/styles',
-        // '@mui/icons-material/ArrowForwardIosSharp',
-        // '@mui/material/Accordion',
-        // '@mui/material/AccordionSummary',
-        // '@mui/material/AccordionDetails',
-      ],
+        '@mui/material/styles',
+        '@mui/icons-material/ArrowForwardIosSharp',
+        '@mui/material/Accordion',
+        '@mui/material/AccordionSummary',
+        '@mui/material/AccordionDetails', // Add @mui/material/AccordionDetails here
+      ], 
     },
   },
   server: {
