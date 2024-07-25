@@ -7,6 +7,7 @@ import {
   useFetchNdcDirectory,
   useFetchDrugsAtFda
 } from '../../Api/useFetchSideEffects.jsx';
+import { motion } from 'framer-motion';
 
 const Summary = ({ reminder, onDeleteReminder }) => {
   const drugName = reminder.prescriptionName;
