@@ -112,6 +112,7 @@ const Homepage = () => {
               </h1>
             </div>
           </div>
+          <FAQ />
         </div>
       </div>
 
