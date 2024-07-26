@@ -7,8 +7,6 @@ import {
   useFetchNdcDirectory,
   useFetchDrugsAtFda
 } from '../../Api/useFetchSideEffects.jsx';
-import { motion } from 'framer-motion';
-
 const Summary = ({ reminder, onDeleteReminder }) => {
   const drugName = reminder.prescriptionName;
   const reminderTime = reminder.prescriptionTimes.join(', ');
@@ -32,12 +30,6 @@ const Summary = ({ reminder, onDeleteReminder }) => {
   return (
     <div className='med-summary'>
       <button className='close-btn' onClick={onDeleteReminder}>X</button>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="drug-info-container"
-      >
         <div className="drug-title">
           <h1 className='drug'>{drugName}</h1>
         </div>
@@ -52,7 +44,6 @@ const Summary = ({ reminder, onDeleteReminder }) => {
           <p className='footer-text-2'> FDA data provided.</p>
 
         </div>
-      </motion.div>
     </div>
   );
 };
