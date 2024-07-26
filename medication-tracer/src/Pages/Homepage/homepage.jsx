@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './homepage.css';
 import temp from '../../assets/Temp1.png';
 import { Link } from "react-router-dom";
-import FAQ from '../../Components/Accordion/acc.jsx';
+/*import FAQ from '../../Components/Accordion/acc.jsx'; */
 
 const Homepage = () => {
   const introDescriptionRef = useRef(null);
@@ -112,7 +112,6 @@ const Homepage = () => {
               </h1>
             </div>
           </div>
-          <FAQ />
         </div>
       </div>
 
