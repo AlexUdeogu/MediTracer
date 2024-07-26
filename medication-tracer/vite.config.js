@@ -5,9 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: [
-
-      ], 
+      external: [], // Ensure no externalization of MUI components
     },
   },
   server: {
